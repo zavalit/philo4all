@@ -1,0 +1,2 @@
+.skip { position:fixed; inset-inline-start:var(--space-4); inset-block-start:var(--space-4); z-index:10; padding:var(--space-3) var(--space-4); background:var(--color-paper); color:var(--color-ink); font-weight:var(--font-weight-bold); translate:0 -200%; }
+.skip:focus { translate:none; }

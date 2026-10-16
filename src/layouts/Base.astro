@@ -1,0 +1,23 @@
+---
+import '../styles/global.css';
+import styles from './Base.module.css';
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content={description} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="/fonts/Now-Medium.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/Now-Bold.woff2" as="font" type="font/woff2" crossorigin />
+  <title>{title}</title>
+</head>
+<body>
+  <a class={styles.skip} href="#hauptinhalt">Zum Inhalt springen</a>
+  <slot />
+</body>
+</html>

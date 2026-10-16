@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import { art } from '../../assets/art';
+import styles from './Art.module.css';
+
+interface Props {
+  /** File name in src/assets/art without extension, e.g. "mascot". */
+  name: string;
+  /** Width as a percentage of the sheet width, as measured in the PDF. */
+  size: number;
+  at: 'start' | 'end' | 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end';
+  /** Hang over the edge of the surrounding panel instead of sitting inside it. */
+  hang?: boolean;
+  /** Sit behind the text like a watermark. */
+  behind?: boolean;
+  /** Fine-tune a hanging illustration: translate in percent of its own size. */
+  shift?: [number, number];
+  eager?: boolean;
+}
+const { name, size, at, hang = false, behind = false, shift, eager = false } = Astro.props;
+const src = art[name];
+if (!src) throw new Error(`Unknown illustration "${name}". Available: ${Object.keys(art).join(', ')}`);
+const style = [`--size:${size}`, shift && `--x:${shift[0]}%;--y:${shift[1]}%`].filter(Boolean).join(';');
+---
+<span class={styles.art} data-at={at} data-hang={hang || undefined} data-behind={behind || undefined} style={style} aria-hidden="true">
+  <Image class={styles.img} src={src} alt="" width={Math.round(size * 8)} densities={[1, 2]} loading={eager ? 'eager' : 'lazy'} />
+</span>

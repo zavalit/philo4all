@@ -1,0 +1,26 @@
+/* PDF page 1. cqi values are the PDF positions as a share of the 810 pt page width. */
+.cover { position:relative; isolation:isolate; flex:1; display:flex; flex-direction:column; padding:1.5cqi 10cqi 4.5cqi; }
+.maze { position:absolute; z-index:-1; inset-block:var(--space-0); inset-inline-end:var(--space-0); inline-size:37.3cqi; block-size:100%; color:var(--color-maze); }
+.note { margin:var(--space-0) auto; max-inline-size:none; color:var(--color-wordmark); font-size:max(var(--font-size-small), 1.6cqi); font-weight:var(--font-weight-medium); line-height:1.35; text-align:center; text-wrap:balance; }
+.logo { position:absolute; z-index:-1; inset-block-start:var(--space-0); inset-inline-end:var(--space-0); inline-size:43.3cqi; }
+
+.wordmark { margin-block-start:max(var(--space-16), 40cqi); font-size:max(var(--font-size-title), 9cqi); line-height:1.4; letter-spacing:.35cqi; color:var(--color-wordmark); white-space:nowrap; }
+.four { position:relative; inset-block-start:-.8cqi; display:inline-block; margin-inline:-2.6cqi -.9cqi; font-family:var(--font-family-script); font-size:250%; font-weight:var(--font-weight-regular); line-height:0; }
+.intro { max-inline-size:78cqi; margin-block-start:1cqi; font-size:max(var(--font-size-body), 2.3cqi); line-height:1.42; }
+.intro :global(p) { margin:var(--space-0); }
+
+.contact { position:relative; align-self:flex-start; margin:5cqi var(--space-0) var(--space-0) 13cqi; font-size:max(var(--font-size-small), 1.95cqi); font-weight:var(--font-weight-bold); }
+.contact a { position:relative; display:block; padding:2.2cqi 5cqi; color:var(--color-ink-deep); text-decoration:none; }
+.contact a:hover { text-decoration:underline; }
+.tape { position:absolute; inset:var(--space-0); inline-size:100%; block-size:100%; object-fit:fill; }
+.arrows { position:absolute; inset-inline-end:calc(100% - 1.5cqi); inset-block-start:62%; inline-size:12.5cqi; }
+
+.start { display:flex; flex-direction:column; align-items:center; gap:2cqi; align-self:flex-end; inline-size:max(31cqi, calc(var(--space-24) * 2)); margin:max(var(--space-16), 12cqi) -6cqi var(--space-0) auto; padding-block-start:var(--space-4); margin-block-start:auto; font-size:max(var(--font-size-lead), 2.85cqi); line-height:1.3; text-align:center; text-decoration:none; }
+.start:hover span { text-decoration:underline; }
+.arrow { inline-size:10cqi; min-inline-size:var(--space-16); }
+
+/* Narrow sheets: the disclaimer needs the full width, so the logo moves below it. */
+@container sheet (width < 36rem) {
+  .logo { position:static; align-self:flex-end; inline-size:55cqi; margin-inline-end:-8cqi; }
+  .wordmark { margin-block-start:max(var(--space-12), 20cqi); }
+}

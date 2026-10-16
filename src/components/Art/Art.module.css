@@ -1,0 +1,39 @@
+/* Sizes use cqi of the surrounding sheet, so illustrations keep their PDF proportions. */
+.art { display:block; inline-size:calc(var(--size) * 1cqi); pointer-events:none; }
+.img { inline-size:100%; }
+
+/* In the text flow: floated beside the panel copy, or flush into the bottom corner. */
+.art:not([data-hang],[data-behind])[data-at$='start'] { float:inline-start; margin:var(--space-0) var(--space-4) var(--space-2) var(--space-0); }
+.art:not([data-hang],[data-behind])[data-at$='end'] { float:inline-end; margin:var(--space-0) var(--space-0) var(--space-2) var(--space-4); }
+.art:not([data-hang],[data-behind])[data-at^='bottom'] { float:none; clear:both; margin:var(--space-4) calc(-1 * var(--pad-x, var(--space-0))) calc(-1 * var(--pad-y, var(--space-0))); }
+.art:not([data-hang],[data-behind])[data-at='bottom-end'] { margin-inline-start:auto; }
+
+/* Behind the text, pinned to a corner (sheet decorations). */
+.art[data-behind] { position:absolute; z-index:-1; translate:var(--x, 0%) var(--y, 0%); }
+.art[data-behind][data-at^='top'] { inset-block-start:var(--space-0); }
+.art[data-behind][data-at^='bottom'] { inset-block-end:var(--space-0); }
+.art[data-behind][data-at$='start'] { inset-inline-start:var(--space-0); }
+.art[data-behind][data-at$='end'] { inset-inline-end:var(--space-0); }
+
+/* Hanging over a panel edge, as in the PDF collage. */
+.art[data-hang] { position:absolute; z-index:2; }
+@container sheet (width >= 40rem) {
+  .art[data-hang][data-at^='top'] { inset-block-start:var(--space-0); }
+  .art[data-hang][data-at^='bottom'] { inset-block-end:var(--space-0); }
+  .art[data-hang]:is([data-at='start'],[data-at='end']) { inset-block-start:50%; }
+  .art[data-hang][data-at$='start'] { inset-inline-start:var(--space-0); }
+  .art[data-hang][data-at$='end'] { inset-inline-end:var(--space-0); }
+  .art[data-hang][data-at='start'] { translate:var(--x, -70%) var(--y, -50%); }
+  .art[data-hang][data-at='end'] { translate:var(--x, 70%) var(--y, -50%); }
+  .art[data-hang][data-at='top-start'] { translate:var(--x, -35%) var(--y, -55%); }
+  .art[data-hang][data-at='top-end'] { translate:var(--x, 35%) var(--y, -55%); }
+  .art[data-hang][data-at='bottom-start'] { translate:var(--x, -35%) var(--y, 45%); }
+  .art[data-hang][data-at='bottom-end'] { translate:var(--x, 35%) var(--y, 45%); }
+}
+/* Narrow sheets: panels span the full width, so hanging art becomes a smaller corner sticker. */
+@container sheet (width < 40rem) {
+  .art[data-hang] { inline-size:calc(var(--size) * .6cqi); inset-block-start:var(--space-0); }
+  .art[data-hang] ~ .art[data-hang] { display:none; }
+  .art[data-hang][data-at$='start'] { inset-inline-start:var(--space-0); translate:-12% -72%; }
+  .art[data-hang][data-at$='end'] { inset-inline-end:var(--space-0); translate:12% -72%; }
+}

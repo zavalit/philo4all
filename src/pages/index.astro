@@ -1,0 +1,54 @@
+---
+import type { ImageMetadata } from 'astro';
+import { getCollection, getEntry, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Reader from '../components/Reader/Reader.astro';
+import Sheet from '../components/Sheet/Sheet.astro';
+import Cover from '../components/Cover/Cover.astro';
+import Contents from '../components/Contents/Contents.astro';
+import Chapter from '../components/Chapter/Chapter.astro';
+import Panel from '../components/Panel/Panel.astro';
+import Art from '../components/Art/Art.astro';
+
+const intro = await getEntry('pages', 'intro');
+const team = await getEntry('pages', 'studi-team');
+if (!intro || !team) throw new Error('Missing intro.mdx or studi-team.mdx');
+const { Content: Intro } = await render(intro);
+const { Content: TeamNote } = await render(team);
+
+const chapters = await Promise.all(
+  (await getCollection('topics'))
+    .sort((a, b) => a.data.order - b.data.order)
+    .map(async (topic) => ({ ...topic.data, id: `thema-${String(topic.data.order).padStart(2, '0')}`, Content: (await render(topic)).Content })),
+);
+
+// Renderings of the original PDF pages, used as teaser thumbnails.
+const renders = import.meta.glob<{ default: ImageMetadata }>('../assets/pages/*.webp', { eager: true });
+const thumb = (page: number) => renders[`../assets/pages/${String(page).padStart(2, '0')}.webp`].default;
+const pages = [
+  { id: 'einstieg', title: 'Titel und Einstieg', thumb: thumb(1) },
+  { id: 'themen', title: 'Inhaltsverzeichnis & Studi-Team', thumb: thumb(2) },
+  ...chapters.map((chapter) => ({ id: chapter.id, title: chapter.title, thumb: thumb(chapter.sourcePage) })),
+];
+---
+<Base title="Philo4all · Dein Weg durch die Uni" description="Studentischer Wegweiser zum Philosophiestudium an der FU Berlin: neun Themen und das Studi-Team auf einer Seite.">
+  <Reader pages={pages}>
+    <Sheet id="einstieg" labelledby="cover-title" flush>
+      <Cover><Intro /></Cover>
+    </Sheet>
+    <Sheet id="themen" labelledby="themen-title">
+      <Contents topics={chapters} members={team.data.members ?? []}><TeamNote /></Contents>
+    </Sheet>
+    {chapters.map((chapter) => (
+      <Sheet id={chapter.id} labelledby={`${chapter.id}-title`} decor={chapter.decor}>
+        <Chapter id={chapter.id} order={chapter.order} title={chapter.title}>
+          <chapter.Content components={{ Panel, Art }} />
+        </Chapter>
+      </Sheet>
+    ))}
+    <Fragment slot="colophon">
+      <p><strong>PHILO4ALL</strong> – ein Wegweiser des Studi-Teams der Studienberatung am Institut für Philosophie der Freien Universität Berlin (Version Mai 2025, erstellt mit Canva).</p>
+      <p>Technischer Prototyp, keine offizielle Webseite der FU Berlin. <a href="https://www.geisteswissenschaften.fu-berlin.de/we01/studieren/studienberatung/philo4all/Kopie-von-Philo4all_aktuell_Juli_2025.pdf">Original-PDF ansehen</a> · Schriften: Now und Alex Brush (<a href="/fonts/OFL-Now.txt">SIL OFL</a>).</p>
+    </Fragment>
+  </Reader>
+</Base>

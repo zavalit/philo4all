@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+import Maze from '../../assets/art/maze.svg';
+import { art } from '../../assets/art';
+import styles from './Cover.module.css';
+---
+<div class={styles.cover}>
+  <Maze class={styles.maze} preserveAspectRatio="xMinYMin slice" aria-hidden="true" />
+  <p class={styles.note}>Diese Datei wurde von dem Team der Studienberatung am Institut für Philosophie erstellt<br />Version von Mai 2025 ©</p>
+  <Image class={styles.logo} src={art['fu-logo']} alt="Freie Universität Berlin" width={352} densities={[1, 2]} loading="eager" />
+
+  <h1 id="cover-title" class={styles.wordmark}>PHILO<span class={styles.four}>4</span>ALL</h1>
+  <div class={styles.intro}><slot /></div>
+
+  <p class={styles.contact}>
+    <Image class={styles.tape} src={art['paper-tape']} alt="" width={260} densities={[1, 2]} loading="eager" />
+    <Image class={styles.arrows} src={art['orange-arrows']} alt="" width={90} densities={[1, 2]} loading="eager" />
+    <a href="https://www.geisteswissenschaften.fu-berlin.de/we01/studieren/studienberatung/index.html">Kontakt zur Studienberatung</a>
+  </p>
+
+  <a class={styles.start} href="#themen">
+    <span>Klick’ dich jetzt durch das Studi-Labyrinth</span>
+    <Image class={styles.arrow} src={art['arrow-down']} alt="" width={92} densities={[1, 2]} loading="eager" />
+  </a>
+</div>

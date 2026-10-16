@@ -1,0 +1,46 @@
+.wrap + .wrap { margin-block-start:var(--space-12); }
+.anchor { block-size:var(--space-0); }
+
+/* A PDF page: 9:16 at minimum, taller when the content needs it. */
+.sheet {
+  position:relative;
+  isolation:isolate;
+  container:sheet / inline-size;
+  display:flex;
+  flex-direction:column;
+  inline-size:min(100%, var(--layout-sheet-max));
+  aspect-ratio:9 / 16;
+  margin-inline:auto;
+  overflow:clip;
+  background:var(--color-paper);
+  color:var(--color-ink);
+  box-shadow:var(--space-0) var(--space-1) var(--space-8) var(--color-shadow);
+}
+.content { position:relative; z-index:1; flex:1; display:flex; flex-direction:column; padding:7cqi 10cqi 14cqi; }
+.flush { padding:var(--space-0); }
+
+/*
+ * Paper stack: a sheet scrolls through, then pins with its bottom on the viewport edge
+ * while the next sheet slides over it (one viewport of travel, provided by ::after).
+ * reader.ts sets --sheet-h and --cover and marks the root once both are in place.
+ */
+@media (width >= 60rem) and (prefers-reduced-motion:no-preference) {
+  :global(:root[data-reader-ready]) .wrap::after { content:''; display:block; block-size:calc(100dvh + var(--space-12)); }
+  :global(:root[data-reader-ready]) .wrap:last-of-type::after { content:none; }
+  :global(:root[data-reader-ready]) .wrap + .wrap { margin-block-start:calc(-1 * 100dvh); }
+  :global(:root[data-reader-ready]) .sheet {
+    position:sticky;
+    inset-block-start:min(var(--space-0), calc(100dvh - var(--sheet-h, 100dvh)));
+    transform-origin:50% 100%;
+    scale:calc(1 - var(--cover, 0) * .035);
+  }
+  :global(:root[data-reader-ready]) .sheet::after {
+    content:'';
+    position:absolute;
+    inset:var(--space-0);
+    z-index:3;
+    background:var(--color-desk);
+    opacity:calc(var(--cover, 0) * .55);
+    pointer-events:none;
+  }
+}

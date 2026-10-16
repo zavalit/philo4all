@@ -1,0 +1,415 @@
+{
+  "color": {
+    "palette": {
+      "$type": "color",
+      "cream": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.968627,
+            0.956863,
+            0.901961
+          ],
+          "hex": "#f7f4e6"
+        }
+      },
+      "maze": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.929412,
+            0.92549,
+            0.866667
+          ],
+          "hex": "#edecdd"
+        }
+      },
+      "pale": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.807843,
+            0.847059,
+            0.745098
+          ],
+          "hex": "#ced8be"
+        }
+      },
+      "sage": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.564706,
+            0.67451,
+            0.556863
+          ],
+          "hex": "#90ac8e"
+        }
+      },
+      "forest": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.313725,
+            0.454902,
+            0.372549
+          ],
+          "hex": "#50745f"
+        }
+      },
+      "ink": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.231373,
+            0.298039,
+            0.258824
+          ],
+          "hex": "#3b4c42"
+        }
+      },
+      "ink-deep": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.14902,
+            0.2,
+            0.172549
+          ],
+          "hex": "#26332c"
+        }
+      },
+      "burgundy": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.517647,
+            0.333333,
+            0.317647
+          ],
+          "hex": "#845551"
+        }
+      },
+      "amber": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.94902,
+            0.67451,
+            0.203922
+          ],
+          "hex": "#f2ac34"
+        }
+      },
+      "black": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "hex": "#000000"
+        }
+      },
+      "white": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "hex": "#ffffff"
+        }
+      },
+      "night-desk": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.121569,
+            0.156863,
+            0.137255
+          ],
+          "hex": "#1f2823"
+        }
+      },
+      "night-paper": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.913725,
+            0.898039,
+            0.839216
+          ],
+          "hex": "#e9e5d6"
+        }
+      },
+      "shadow": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.35,
+          "hex": "#000000"
+        }
+      },
+      "night-shadow": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.55,
+          "hex": "#000000"
+        }
+      }
+    }
+  },
+  "space": {
+    "0": {
+      "$value": {
+        "value": 0,
+        "unit": "rem"
+      }
+    },
+    "1": {
+      "$value": {
+        "value": 0.25,
+        "unit": "rem"
+      }
+    },
+    "2": {
+      "$value": {
+        "value": 0.5,
+        "unit": "rem"
+      }
+    },
+    "3": {
+      "$value": {
+        "value": 0.75,
+        "unit": "rem"
+      }
+    },
+    "4": {
+      "$value": {
+        "value": 1,
+        "unit": "rem"
+      }
+    },
+    "5": {
+      "$value": {
+        "value": 1.25,
+        "unit": "rem"
+      }
+    },
+    "6": {
+      "$value": {
+        "value": 1.5,
+        "unit": "rem"
+      }
+    },
+    "8": {
+      "$value": {
+        "value": 2,
+        "unit": "rem"
+      }
+    },
+    "10": {
+      "$value": {
+        "value": 2.5,
+        "unit": "rem"
+      }
+    },
+    "12": {
+      "$value": {
+        "value": 3,
+        "unit": "rem"
+      }
+    },
+    "16": {
+      "$value": {
+        "value": 4,
+        "unit": "rem"
+      }
+    },
+    "20": {
+      "$value": {
+        "value": 5,
+        "unit": "rem"
+      }
+    },
+    "24": {
+      "$value": {
+        "value": 6,
+        "unit": "rem"
+      }
+    },
+    "$type": "dimension"
+  },
+  "radius": {
+    "$type": "dimension",
+    "small": {
+      "$value": {
+        "value": 0.25,
+        "unit": "rem"
+      }
+    },
+    "medium": {
+      "$value": {
+        "value": 0.75,
+        "unit": "rem"
+      }
+    },
+    "round": {
+      "$value": {
+        "value": 999,
+        "unit": "rem"
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "body": {
+        "$value": [
+          "Now",
+          "Avenir Next",
+          "Segoe UI",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif"
+        ]
+      },
+      "script": {
+        "$value": [
+          "Alex Brush",
+          "Snell Roundhand",
+          "cursive"
+        ]
+      }
+    },
+    "size": {
+      "$type": "dimension",
+      "small": {
+        "$value": {
+          "value": 0.875,
+          "unit": "rem"
+        }
+      },
+      "body": {
+        "$value": {
+          "value": 1.0625,
+          "unit": "rem"
+        }
+      },
+      "lead": {
+        "$value": {
+          "value": 1.1875,
+          "unit": "rem"
+        }
+      },
+      "section": {
+        "$value": {
+          "value": 1.375,
+          "unit": "rem"
+        }
+      },
+      "title": {
+        "$value": {
+          "value": 2,
+          "unit": "rem"
+        }
+      },
+      "display": {
+        "$value": {
+          "value": 2.75,
+          "unit": "rem"
+        }
+      }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": {
+        "$value": 400
+      },
+      "medium": {
+        "$value": 500
+      },
+      "bold": {
+        "$value": 700
+      }
+    }
+  },
+  "layout": {
+    "$type": "dimension",
+    "sheet-max": {
+      "$value": {
+        "value": 50,
+        "unit": "rem"
+      }
+    },
+    "reading-max": {
+      "$value": {
+        "value": 42,
+        "unit": "rem"
+      }
+    },
+    "rail-min": {
+      "$value": {
+        "value": 18,
+        "unit": "rem"
+      }
+    },
+    "rail-max": {
+      "$value": {
+        "value": 28,
+        "unit": "rem"
+      }
+    },
+    "teaser-perspective": {
+      "$value": {
+        "value": 75,
+        "unit": "rem"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "value": 0.0625,
+        "unit": "rem"
+      }
+    },
+    "focus-width": {
+      "$value": {
+        "value": 0.1875,
+        "unit": "rem"
+      }
+    },
+    "hit-min": {
+      "$value": {
+        "value": 2.75,
+        "unit": "rem"
+      }
+    }
+  },
+  "duration": {
+    "$type": "duration",
+    "fast": {
+      "$value": {
+        "value": 160,
+        "unit": "ms"
+      }
+    },
+    "slow": {
+      "$value": {
+        "value": 420,
+        "unit": "ms"
+      }
+    }
+  }
+}

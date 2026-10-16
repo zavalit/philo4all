@@ -1,0 +1,31 @@
+---
+import styles from './Panel.module.css';
+
+interface Props {
+  title: string;
+  /** Panel colour as in the PDF: pale (light green), sage (mid green) or forest (dark green). */
+  tone?: 'pale' | 'sage' | 'forest';
+  /** Width in columns of the 12-column page grid. */
+  span?: number;
+  /** Which side of the page the panel sits on when narrower than the page. */
+  align?: 'start' | 'end';
+  /** Number of grid rows to span, for a tall panel beside stacked ones. */
+  rows?: number;
+  /** Run the panel off the paper edge, as some PDF panels do. */
+  bleed?: 'start' | 'end' | 'both';
+  /** Overlap the panel above, like pieces of paper laid on top of each other. */
+  lift?: boolean;
+  /** Hand-drawn wave under the heading. */
+  squiggle?: boolean;
+}
+const { title, tone = 'pale', span = 12, align = 'start', rows = 1, bleed, lift = false, squiggle = false } = Astro.props;
+---
+<section class={styles.panel} data-tone={tone} data-align={align} data-bleed={bleed} data-lift={lift || undefined} style={`--span:${span};--rows:${rows}`}>
+  <h3 class={styles.title}>{title}</h3>
+  {squiggle && (
+    <svg class={styles.squiggle} viewBox="0 0 64 10" aria-hidden="true" focusable="false">
+      <path d="M2 5c5-5 9-5 15 0s10 5 15 0 10-5 15 0 9 5 15 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </svg>
+  )}
+  <div class={styles.body}><slot /></div>
+</section>

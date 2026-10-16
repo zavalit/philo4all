@@ -1,0 +1,8 @@
+/* PDF chapter pages: a title and a collage of panels on a 12-column grid (see Panel span/align). */
+.title { margin-block-end:max(var(--space-6), 5cqi); font-size:max(var(--font-size-section), 3.8cqi); text-align:center; }
+.panels { display:grid; grid-template-columns:repeat(12, minmax(0, 1fr)); gap:4cqi 3cqi; align-items:start; }
+.panels > :global(p) { grid-column:1 / -1; margin:var(--space-0); font-weight:var(--font-weight-bold); text-align:center; text-wrap:balance; }
+
+@container sheet (width < 40rem) {
+  .panels { display:flex; flex-direction:column; gap:var(--space-8); }
+}

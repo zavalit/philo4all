@@ -1,0 +1,17 @@
+---
+import PageTeaser, { type TeaserPage } from '../PageTeaser/PageTeaser.astro';
+import styles from './Reader.module.css';
+
+interface Props { pages: TeaserPage[]; }
+const { pages } = Astro.props;
+---
+<div class={styles.reader}>
+  <div class={styles.rail}><PageTeaser pages={pages} /></div>
+  <main id="hauptinhalt" class={styles.column} tabindex="-1">
+    <slot />
+    <footer class={styles.colophon}><slot name="colophon" /></footer>
+  </main>
+</div>
+<script>
+  import './reader';
+</script>

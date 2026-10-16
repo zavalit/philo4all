@@ -1,0 +1,29 @@
+{
+  "name": "philo4all-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "tokens": "node scripts/build-tokens.mjs",
+    "lint": "node scripts/lint-css.mjs && node scripts/lint-content.mjs",
+    "dev": "node scripts/build-tokens.mjs && astro dev",
+    "build": "node scripts/build-tokens.mjs && astro build",
+    "preview": "astro preview",
+    "check": "node scripts/build-tokens.mjs && node scripts/lint-css.mjs && node scripts/lint-content.mjs && astro check",
+    "test:a11y": "node tests/a11y.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.4.0",
+    "@astrojs/mdx": "^8.1.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^5.9.0",
+    "playwright": "^1.64.1",
+    "@axe-core/playwright": "^4.14.0",
+    "wrangler": "^4.0.0"
+  }
+}

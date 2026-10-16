@@ -1,0 +1,40 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import styles from './Contents.module.css';
+
+interface Props {
+  topics: Array<{ id: string; order: number; title: string; description: string }>;
+  members: Array<{ name: string; image: ImageMetadata }>;
+}
+const { topics, members } = Astro.props;
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+<div class={styles.contents}>
+  <h2 id="themen-title" class={styles.title}>Inhaltsverzeichnis</h2>
+  <nav aria-labelledby="themen-title">
+    <ol class={styles.cards}>
+      {topics.map((topic) => (
+        <li class={styles.card}>
+          <span class={styles.num} aria-hidden="true">{pad(topic.order)}</span>
+          <a class={styles.link} href={`#${topic.id}`}>{topic.title}</a>
+          <p class={styles.desc}>{topic.description}</p>
+        </li>
+      ))}
+    </ol>
+  </nav>
+
+  <section id="studi-team" class={styles.team} aria-labelledby="team-title">
+    <h3 id="team-title" class={styles.teamTitle}>Euer Studi-Team</h3>
+    <ul class={styles.members}>
+      {members.map((member) => (
+        <li class={styles.member}>
+          <Image class={styles.photo} src={member.image} alt={`Porträt von ${member.name}`} width={180} densities={[1, 2]} />
+          <span>{member.name}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <div class={styles.ask}><slot /></div>
+</div>

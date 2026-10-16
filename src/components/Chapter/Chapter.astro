@@ -1,0 +1,10 @@
+---
+import styles from './Chapter.module.css';
+
+interface Props { id: string; order: number; title: string; }
+const { id, order, title } = Astro.props;
+---
+<div class={styles.chapter}>
+  <h2 id={`${id}-title`} class={styles.title}>{order}) {title}</h2>
+  <div class={styles.panels}><slot /></div>
+</div>

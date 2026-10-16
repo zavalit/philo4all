@@ -1,0 +1,43 @@
+.panel {
+  --pad-x:max(var(--space-4), 4.5cqi);
+  --pad-y:max(var(--space-5), 3.5cqi);
+  position:relative;
+  isolation:isolate;
+  display:flow-root;
+  grid-column:1 / span var(--span);
+  grid-row:span var(--rows);
+  padding:var(--pad-y) var(--pad-x);
+  background:var(--color-pale);
+  color:var(--color-ink);
+}
+.panel[data-align='end'] { grid-column:span var(--span) / -1; }
+.panel[data-tone='sage'] { background:var(--color-sage); color:var(--color-ink-deep); --focus:var(--color-ink-deep); }
+.panel[data-tone='forest'] { background:var(--color-forest); color:var(--color-on-strong); --focus:var(--color-on-strong); }
+.panel[data-bleed='start'],.panel[data-bleed='both'] { margin-inline-start:-10cqi; padding-inline-start:calc(var(--pad-x) + 6cqi); }
+.panel[data-bleed='end'],.panel[data-bleed='both'] { margin-inline-end:-10cqi; padding-inline-end:calc(var(--pad-x) + 6cqi); }
+.panel:has([data-hang]) { z-index:1; }
+.panel[data-lift] { z-index:1; margin-block-start:-11cqi; box-shadow:var(--space-0) calc(-1 * var(--space-1)) var(--space-4) var(--color-shadow); }
+
+/* Keep text clear of an illustration that hangs over a side edge (narrow sheets turn it into a sticker). */
+@container sheet (width >= 40rem) {
+  .panel:has([data-hang]:is([data-at='start'],[data-at='bottom-start'])) { padding-inline-start:max(var(--pad-x), 15cqi); }
+  .panel:has([data-hang]:is([data-at='end'],[data-at='bottom-end'])) { padding-inline-end:max(var(--pad-x), 15cqi); }
+}
+
+.title { margin-block-end:var(--space-3); font-size:max(var(--font-size-section), 3cqi); text-align:center; text-wrap:balance; }
+.panel:has([data-hang][data-at='top-start']) .title { padding-inline-start:12cqi; }
+.panel:has([data-hang][data-at='top-end']) .title { padding-inline-end:12cqi; }
+.squiggle { inline-size:max(var(--space-12), 7cqi); margin:calc(-1 * var(--space-2)) auto var(--space-3); }
+
+.body { font-size:max(var(--font-size-body), 2.2cqi); overflow-wrap:break-word; hyphens:auto; }
+.body :global(a) { font-weight:var(--font-weight-bold); }
+.body :global(:is(p,ul,ol):last-child) { margin-block-end:var(--space-0); }
+.body :global(ul ul) { margin-block:var(--space-1) var(--space-0); list-style-type:circle; }
+.body :global(img:not([aria-hidden] img)) { inline-size:100%; margin-block:var(--space-3); }
+
+@container sheet (width < 40rem) {
+  .panel[data-bleed] { margin-inline:var(--space-0); padding-inline:var(--pad-x); }
+  .panel[data-lift] { margin-block-start:var(--space-0); }
+  .panel:has([data-hang]) { margin-block-start:var(--space-8); }
+  .panel:has([data-hang]) .title { padding-inline:14cqi; }
+}

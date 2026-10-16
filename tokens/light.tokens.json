@@ -1,0 +1,50 @@
+{
+  "color": {
+    "$type": "color",
+    "desk": {
+      "$value": "{color.palette.ink}"
+    },
+    "paper": {
+      "$value": "{color.palette.cream}"
+    },
+    "maze": {
+      "$value": "{color.palette.maze}"
+    },
+    "pale": {
+      "$value": "{color.palette.pale}"
+    },
+    "sage": {
+      "$value": "{color.palette.sage}"
+    },
+    "forest": {
+      "$value": "{color.palette.forest}"
+    },
+    "burgundy": {
+      "$value": "{color.palette.burgundy}"
+    },
+    "ink": {
+      "$value": "{color.palette.ink}"
+    },
+    "ink-deep": {
+      "$value": "{color.palette.ink-deep}"
+    },
+    "wordmark": {
+      "$value": "{color.palette.black}"
+    },
+    "on-strong": {
+      "$value": "{color.palette.white}"
+    },
+    "on-desk": {
+      "$value": "{color.palette.cream}"
+    },
+    "focus": {
+      "$value": "{color.palette.burgundy}"
+    },
+    "focus-desk": {
+      "$value": "{color.palette.amber}"
+    },
+    "shadow": {
+      "$value": "{color.palette.shadow}"
+    }
+  }
+}

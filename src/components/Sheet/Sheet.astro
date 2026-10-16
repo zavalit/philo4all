@@ -1,0 +1,23 @@
+---
+import Art from '../Art/Art.astro';
+import styles from './Sheet.module.css';
+
+interface Props {
+  id: string;
+  /** id of the sheet's heading. */
+  labelledby: string;
+  /** Recurring corner decorations of the PDF chapter pages. */
+  decor?: Array<'leaf' | 'bushes'>;
+  /** Let the content run to the paper edges (cover page). */
+  flush?: boolean;
+}
+const { id, labelledby, decor = [], flush = false } = Astro.props;
+---
+<div class={styles.wrap}>
+  <div id={id} class={styles.anchor}></div>
+  <article class={styles.sheet} aria-labelledby={labelledby} data-sheet>
+    {decor.includes('leaf') && <Art name="leaf-branch" size={18} at="top-end" behind />}
+    {decor.includes('bushes') && <Art name="bushes" size={37} at="bottom-end" behind shift={[-3, 0]} />}
+    <div class:list={[styles.content, flush && styles.flush]}><slot /></div>
+  </article>
+</div>
