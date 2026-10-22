@@ -14,6 +14,6 @@ export type PaperStackConfig = {
 
 export const paperStack: PaperStackConfig = {
   stick: 0,
-  dim: 0.95,
+  dim: 0.55,
   shrink: 0.035,
 };
