@@ -4,7 +4,8 @@
 .colophon { inline-size:min(100%, var(--layout-sheet-max)); margin:var(--space-10) auto var(--space-0); padding-inline:var(--space-2); color:var(--color-on-desk); font-size:var(--font-size-small); --focus:var(--color-focus-desk); }
 .colophon :global(p) { margin-block:var(--space-0) var(--space-2); }
 
+/* Wide screens: sheets centred like in a PDF viewer, the page dots in the left gutter. */
 @media (width >= 60rem) {
-  .reader { display:grid; grid-template-columns:clamp(var(--layout-rail-min), 30%, var(--layout-rail-max)) minmax(0, 1fr); }
-  .column { padding:var(--space-12) var(--space-12) var(--space-16) var(--space-4); }
+  .reader { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, var(--layout-sheet-max)) minmax(0, 1fr); }
+  .column { padding:var(--space-12) var(--space-0) var(--space-16); }
 }

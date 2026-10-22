@@ -360,21 +360,15 @@
         "unit": "rem"
       }
     },
-    "rail-min": {
+    "menu-max": {
       "$value": {
-        "value": 18,
+        "value": 19,
         "unit": "rem"
       }
     },
-    "rail-max": {
+    "preview-width": {
       "$value": {
-        "value": 28,
-        "unit": "rem"
-      }
-    },
-    "teaser-perspective": {
-      "$value": {
-        "value": 75,
+        "value": 12,
         "unit": "rem"
       }
     },

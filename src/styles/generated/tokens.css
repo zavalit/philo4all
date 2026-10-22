@@ -45,9 +45,8 @@
   --font-weight-bold: 700;
   --layout-sheet-max: 50rem;
   --layout-reading-max: 42rem;
-  --layout-rail-min: 18rem;
-  --layout-rail-max: 28rem;
-  --layout-teaser-perspective: 75rem;
+  --layout-menu-max: 19rem;
+  --layout-preview-width: 12rem;
   --layout-hairline: 0.0625rem;
   --layout-focus-width: 0.1875rem;
   --layout-hit-min: 2.75rem;

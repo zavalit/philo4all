@@ -30,6 +30,13 @@ try{
     if(await sheets.count()!==11)fail(`Expected 11 sheets (${label})`);
     const links=page.locator('[data-page-link]');
     if(await links.count()!==11)fail(`Expected 11 page links (${label})`);
+    // Headings are the source of truth for page labels.
+    const mislabelled=await page.evaluate(()=>{
+     const text=el=>el?.textContent.replace(/\s+/g,' ').trim();
+     const headings=[...document.querySelectorAll('[data-sheet]')].map(sheet=>text(document.getElementById(sheet.getAttribute('aria-labelledby'))));
+     return [...document.querySelectorAll('[data-page-link]')].map((link,i)=>[text(link),headings[i]]).filter(([a,b])=>a!==b);
+    });
+    if(mislabelled.length)fail(`Page labels differ from headings: ${JSON.stringify(mislabelled)} (${label})`);
     const columns=await page.locator('nav[aria-labelledby="themen-title"] ol').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length);
     if(columns!==(width<768?1:3))fail(`Unexpected topic columns ${columns} (${label})`);
     const position=await sheets.first().evaluate(el=>getComputedStyle(el).position);
@@ -40,12 +47,29 @@ try{
     if(results.violations.length)fail(label,results.violations.map(v=>v.id+' ('+v.nodes.length+' nodes)').join(', '));
     if(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth))fail(`Horizontal overflow (${label})`);
 
+    const duplicateIds=await page.evaluate(()=>{const ids=[...document.querySelectorAll('[id]')].map(el=>el.id);return ids.filter((id,i)=>ids.indexOf(id)!==i);});
+    if(duplicateIds.length)fail(`Duplicate ids ${duplicateIds.join(', ')} (${label})`);
+
     if(width>=960){
-     if(!await page.locator('[data-teaser] [aria-hidden="true"]').first().isVisible())fail(`Teaser stack hidden (${label})`);
+     // Hovering a dot previews its sheet as a live copy; the copy's layout must match the sheet box for box.
+     for(let i=0;i<11;i++){
+      await links.nth(i).hover();
+      const result=await page.evaluate(i=>{
+       const preview=document.querySelector('[data-preview]');
+       const copy=preview?.querySelector('[data-preview-mini] > *');
+       const sheet=document.querySelectorAll('[data-sheet]')[i];
+       const boxes=el=>[...el.querySelectorAll('*')].map(e=>[e.offsetLeft,e.offsetTop,e.offsetWidth,e.offsetHeight].join());
+       return {open:preview?.hasAttribute('data-open'),same:!!copy&&boxes(sheet).join()===boxes(copy).join()};
+      },i);
+      if(!result.open)fail(`Preview ${i+1} did not open (${label})`);
+      if(!result.same)fail(`Preview ${i+1} differs from its sheet (${label})`);
+     }
+     await page.keyboard.press('Escape');
+     if(await page.locator('[data-preview][data-open]').count())fail(`Escape did not close the preview (${label})`);
      await page.evaluate(()=>document.getElementById('thema-03').scrollIntoView({behavior:'instant'}));
      await nextFrames(page);
      const current=await page.locator('[data-page-link][aria-current="location"]').getAttribute('href');
-     if(current!=='#thema-03')fail(`Teaser did not follow scrolling: ${current} (${label})`);
+     if(current!=='#thema-03')fail(`Current page did not follow scrolling: ${current} (${label})`);
      await links.nth(5).click();
     }else{
      await page.locator('[popovertarget="seiten"]').click();
@@ -54,6 +78,19 @@ try{
      if(await page.locator('[data-pages]').evaluate(el=>el.matches(':popover-open')))fail(`Page list stayed open (${label})`);
     }
     if(new URL(page.url()).hash!=='#thema-04')fail(`Page navigation failed (${label})`);
+
+    // The URL hash follows the page in view (none on the cover), and a deep link survives loading.
+    const hashIs=hash=>page.waitForFunction(hash=>location.hash===hash,hash,{timeout:3000}).then(()=>true,()=>false);
+    for(const id of ['thema-07','thema-02']){
+     await page.evaluate(id=>{const anchor=document.getElementById(id);scrollTo({top:anchor.getBoundingClientRect().top+scrollY+40,behavior:'instant'});},id);
+     if(!await hashIs('#'+id))fail(`Hash ${await page.evaluate(()=>location.hash)} while reading ${id} (${label})`);
+    }
+    await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));
+    if(!await hashIs(''))fail(`Hash not cleared on the cover (${label})`);
+    await page.goto(origin+'/?deep-link#thema-05');
+    const arrived=await page.waitForFunction(()=>document.querySelector('[data-page-link][aria-current]')?.getAttribute('href')==='#thema-05',null,{timeout:3000}).then(()=>true,()=>false);
+    const deepHash=await page.evaluate(()=>location.hash);
+    if(!arrived||deepHash!=='#thema-05')fail(`Deep link not kept: arrived ${arrived}, hash ${deepHash} (${label})`);
     await context.close();
    }
   }

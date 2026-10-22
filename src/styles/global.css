@@ -7,7 +7,9 @@
 @font-face { font-family:'Alex Brush'; src:url('/fonts/AlexBrush-Regular-latin.woff2') format('woff2'); font-display:swap; unicode-range:U+0030-0039; }
 
 *,*::before,*::after { box-sizing:border-box; }
-html { background:var(--color-desk); scroll-behavior:smooth; }
+html { background:var(--color-desk); }
+/* In-page jumps glide once the page has loaded (reader.ts sets data-smooth), so deep links land directly. */
+@media (prefers-reduced-motion:no-preference) { :root[data-smooth] { scroll-behavior:smooth; } }
 body { margin:var(--space-0); background:var(--color-desk); color:var(--color-ink); font-family:var(--font-family-body); font-size:var(--font-size-body); font-weight:var(--font-weight-medium); line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
 img,svg { display:block; max-inline-size:100%; block-size:auto; }
 a { color:inherit; text-decoration-line:underline; text-decoration-thickness:from-font; text-underline-offset:var(--space-1); }
@@ -21,4 +23,3 @@ a:hover { text-decoration-thickness:var(--layout-focus-width); }
 :where(button) { font:inherit; color:inherit; }
 ::selection { background:var(--color-pale); color:var(--color-ink); }
 .sr-only { position:absolute; inline-size:var(--layout-hairline); block-size:var(--layout-hairline); overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }

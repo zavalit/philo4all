@@ -1,12 +1,14 @@
 ---
-import PageTeaser, { type TeaserPage } from '../PageTeaser/PageTeaser.astro';
+import PageNav, { type NavPage } from '../PageNav/PageNav.astro';
+import { paperStack, type PaperStackConfig } from '../../config/reader';
 import styles from './Reader.module.css';
 
-interface Props { pages: TeaserPage[]; }
-const { pages } = Astro.props;
+interface Props extends Partial<PaperStackConfig> { pages: NavPage[]; }
+const { pages, ...overrides } = Astro.props;
+const stack = { ...paperStack, ...overrides };
 ---
-<div class={styles.reader}>
-  <div class={styles.rail}><PageTeaser pages={pages} /></div>
+<div class={styles.reader} style={`--stack-stick:${stack.stick};--stack-dim:${stack.dim};--stack-shrink:${stack.shrink}`}>
+  <PageNav pages={pages} />
   <main id="hauptinhalt" class={styles.column} tabindex="-1">
     <slot />
     <footer class={styles.colophon}><slot name="colophon" /></footer>

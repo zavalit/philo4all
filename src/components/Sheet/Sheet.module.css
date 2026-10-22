@@ -20,27 +20,30 @@
 .flush { padding:var(--space-0); }
 
 /*
- * Paper stack: a sheet scrolls through, then pins with its bottom on the viewport edge
- * while the next sheet slides over it (one viewport of travel, provided by ::after).
- * reader.ts sets --sheet-h and --cover and marks the root once both are in place.
+ * Paper stack: a sheet scrolls through, then pins with its bottom on the viewport edge while the
+ * next sheet slides over it. ::after provides the pinned travel, --stack-stick of a viewport plus
+ * the sheet gap (src/config/reader.ts), and the next wrap pulls up by the same; after that the sheet
+ * escapes upwards. At 0 this is plain scrolling with the normal gap. --stack-dim and --stack-shrink
+ * set how covered sheets darken and recede. reader.ts sets --sheet-h and --cover per sheet.
+ * Only real sheets ([data-sheet]) stack; the copies in the page-dot previews do not.
  */
 @media (width >= 60rem) and (prefers-reduced-motion:no-preference) {
-  :global(:root[data-reader-ready]) .wrap::after { content:''; display:block; block-size:calc(100dvh + var(--space-12)); }
+  :global(:root[data-reader-ready]) .wrap::after { content:''; display:block; block-size:calc(var(--stack-stick, 1) * (100dvh + var(--space-12))); }
   :global(:root[data-reader-ready]) .wrap:last-of-type::after { content:none; }
-  :global(:root[data-reader-ready]) .wrap + .wrap { margin-block-start:calc(-1 * 100dvh); }
-  :global(:root[data-reader-ready]) .sheet {
+  :global(:root[data-reader-ready]) .wrap + .wrap { margin-block-start:calc(var(--space-12) - var(--stack-stick, 1) * (100dvh + var(--space-12))); }
+  :global(:root[data-reader-ready]) .sheet[data-sheet] {
     position:sticky;
     inset-block-start:min(var(--space-0), calc(100dvh - var(--sheet-h, 100dvh)));
     transform-origin:50% 100%;
-    scale:calc(1 - var(--cover, 0) * .035);
+    scale:calc(1 - var(--cover, 0) * var(--stack-shrink, 0));
   }
-  :global(:root[data-reader-ready]) .sheet::after {
+  :global(:root[data-reader-ready]) .sheet[data-sheet]::after {
     content:'';
     position:absolute;
     inset:var(--space-0);
     z-index:3;
     background:var(--color-desk);
-    opacity:calc(var(--cover, 0) * .55);
+    opacity:calc(var(--cover, 0) * var(--stack-dim, 0));
     pointer-events:none;
   }
 }

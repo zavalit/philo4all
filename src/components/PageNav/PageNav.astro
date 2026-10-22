@@ -1,0 +1,31 @@
+---
+import styles from './PageNav.module.css';
+
+/** title: the sheet's heading, which is the only page label. */
+export interface NavPage { id: string; title: string; }
+interface Props { pages: NavPage[]; }
+const { pages } = Astro.props;
+---
+<div class={styles.pagenav}>
+  <button class={styles.pill} type="button" popovertarget="seiten"><span class="sr-only">Seiten, aktuell: </span><span data-page-title>{pages[0]?.title}</span></button>
+  <nav id="seiten" class={styles.pages} aria-label="Seiten" popover data-pages>
+    <ol class={styles.list}>
+      {pages.map((page, i) => (
+        <li>
+          <a class={styles.link} href={`#${page.id}`} data-page-link data-title={page.title} aria-current={i === 0 ? 'location' : undefined}>
+            <span class={styles.dot} aria-hidden="true"></span>
+            <span class={styles.label}>{page.title}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </nav>
+  <!-- Hover preview: pagenav.ts fills it with a live copy of the hovered sheet. -->
+  <a class={styles.preview} href={`#${pages[0]?.id}`} tabindex="-1" aria-hidden="true" data-preview>
+    <span class={styles.previewTitle} data-preview-title></span>
+    <span class={styles.mini} data-preview-mini></span>
+  </a>
+</div>
+<script>
+  import './pagenav';
+</script>

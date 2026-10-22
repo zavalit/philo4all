@@ -20,36 +20,36 @@ pnpm run test:a11y
 
 - **11 sheets on one page:** the cover, the table of contents with the Studi-Team, and the nine chapters. Each sheet is at least 9:16 like the PDF pages and grows with its content. Chapter 6 covers PDF pages 8–9.
 - **Wide screens (≥ 60rem):**
-  - A tilted stack of page thumbnails on the left replaces the PDF viewer's sidebar.
-  - Next to it is a column of dots, one per page.
-  - Each sheet pins once you reach its end, and the next one slides over it ("paper stack"). The thumbnail stack glides in step.
-- **Narrow screens:** plain top-to-bottom scrolling. A floating "Seite 05 / 11" pill opens the page list.
-- **Without JavaScript:** all navigation still works. It uses ordinary fragment links (`#themen`, `#thema-04`); `reader.ts` only adds the stacking and the teaser motion.
-- **Reduced motion:** with `prefers-reduced-motion`, there is no stacking, no velocity skew and no smooth scrolling.
+  - The sheets are centred like in a PDF viewer.
+  - The left gutter holds a column of dots, one per page. The visible dot sits as far from the sheet as the sheets sit from the top.
+  - Hovering or focusing a dot shows a preview of that whole sheet: a live copy of the real sheet, laid out at its own width and scaled down. It is always identical to the page, including in dark mode and after edits.
+  - The preview opens into the gutter when there is room, otherwise next to the dots. It stays open while hovered, Escape closes it, and clicking it opens the page.
+  - Each sheet pins once you reach its end, and the next one slides over it ("paper stack").
+- **Page labels:** dots, previews, the page list and the pill all use each sheet's own heading ("1) Studienalltag & Zurechtfinden"); there is no separate page numbering.
+- **URL:** the hash follows the page being read (`#thema-07` only while "7) Wohnen & Finanzieren" is current, none on the cover), without adding history entries. Deep links land directly; in-page jumps glide and keep their target hash.
+- **Narrow screens:** plain top-to-bottom scrolling. A floating pill with the current heading opens the page list.
+- **Without JavaScript:** all navigation still works. It uses ordinary fragment links (`#themen`, `#thema-04`); `reader.ts` and `pagenav.ts` only add the stacking, the current-page marker and the previews.
+- **Reduced motion:** with `prefers-reduced-motion`, there is no stacking and no smooth scrolling.
 
-### Teaser configuration
+### Paper stack configuration
 
-The defaults are in [`src/config/teaser.ts`](src/config/teaser.ts). `<PageTeaser>` accepts any of them as props.
+The defaults are in [`src/config/reader.ts`](src/config/reader.ts). `<Reader>` accepts any of them as props.
 
 | Option | Meaning |
 |---|---|
-| `angle` | Rotation of the whole stack, in degrees |
-| `tilt` | 3D turn towards the document, in degrees |
-| `visible` | Neighbouring pages shown above and below the current page |
-| `spacing` | Distance between thumbnails, as a share of thumbnail height |
-| `tint` | Desk-coloured veil over pages that are not current (0–1) |
-| `bend` | Skew from scroll speed (0 turns it off) |
-| `scale` | Size of neighbours relative to the current page |
+| `stick` | How long a finished sheet stays pinned while the next one slides over it, as a share of the screen height. `0` gives plain scrolling, `1` keeps it pinned until it is fully covered, and values in between pin it and then let it escape upwards. |
+| `dim` | How dark a covered sheet gets (0–1) |
+| `shrink` | How far a covered sheet recedes (0 = not at all, 0.1 = to 90 %) |
 
 ## Project layout
 
 ```text
 src/
-  pages/index.astro               composes the reader from the content collections
+  pages/index.astro               composes the reader; defines each sheet's heading (also the nav label)
   layouts/Base.astro              document head, fonts, skip link
   components/
-    Reader/       grid of teaser + sheets; reader.ts is the scroll engine
-    PageTeaser/   tilted thumbnail stack, dots (wide) / pill + popover list (narrow)
+    Reader/       grid of page dots + sheets; reader.ts is the scroll engine (progress, paper stack)
+    PageNav/      page dots with hover previews (pagenav.ts, wide) / pill + popover list (narrow)
     Sheet/        one paper page; corner decor; paper-stack CSS
     Cover/        PDF page 1
     Contents/     PDF page 2: topic cards, Studi-Team
@@ -59,14 +59,13 @@ src/
   content/pages/{intro,studi-team}.mdx
   content/topics/01-studienalltag.mdx … 09-ueber-die-uni-hinaus.mdx
   assets/art/      illustrations extracted from the PDF (+ maze.svg)
-  assets/pages/    PDF page renders used as teaser thumbnails
   assets/photos/   team portraits and campus photos
-  config/teaser.ts
+  config/reader.ts paper-stack settings (stick, dim, shrink)
   styles/global.css, styles/generated/tokens.css (generated)
 public/fonts/      Now and Alex Brush (SIL OFL, licence files alongside)
 tokens/{base,light,dark}.tokens.json
 scripts/           token build, CSS/content lint, internal link check
-tests/a11y.mjs     axe + reader behaviour, light/dark, 390/1280 px, with/without reduced motion
+tests/a11y.mjs     axe, reader behaviour, labels = headings, URL hash = current page, preview = page equivalence; light/dark, 390/1280 px, with/without reduced motion
 ```
 
 ## Design system
@@ -100,7 +99,7 @@ See [`REDAKTION.md`](./REDAKTION.md) (German) for the Studi-Team. In short: chap
 - **Structure:**
   - `lang="de"` and a skip link.
   - Each sheet is an `<article>` labelled by its heading.
-  - One `nav` lists all pages. The thumbnail stack is `aria-hidden`, and its links are not in the tab order.
+  - One `nav` lists all pages. The hover preview is `aria-hidden` and out of the tab order; its sheet copy is `inert`, with all ids removed.
 - **Focus:**
   - Visible focus with a token-checked contrast.
   - Focus moving into a sheet that is pinned under the next one scrolls it back into view (WCAG 2.4.11).

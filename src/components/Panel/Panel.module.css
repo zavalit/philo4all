@@ -33,7 +33,7 @@
 .body :global(a) { font-weight:var(--font-weight-bold); }
 .body :global(:is(p,ul,ol):last-child) { margin-block-end:var(--space-0); }
 .body :global(ul ul) { margin-block:var(--space-1) var(--space-0); list-style-type:circle; }
-.body :global(img:not([aria-hidden] img)) { inline-size:100%; margin-block:var(--space-3); }
+.body :global(img:not([data-at] img)) { inline-size:100%; margin-block:var(--space-3); }
 
 @container sheet (width < 40rem) {
   .panel[data-bleed] { margin-inline:var(--space-0); padding-inline:var(--pad-x); }
