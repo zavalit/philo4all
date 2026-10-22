@@ -1,1 +1,5 @@
-{"extends":"astro/tsconfigs/strict","compilerOptions":{"strictNullChecks":true}}
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": { "strictNullChecks": true },
+  "files": ["worker-configuration.d.ts"]
+}

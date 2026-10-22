@@ -23,7 +23,9 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm run check
+      - run: pnpm run test:chat
       - run: pnpm run build
+      - run: pnpm run deploy:dry-run
       - run: node scripts/check-internal-links.mjs
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm run test:a11y
@@ -33,12 +35,13 @@ jobs:
           args: >-
             --no-progress --max-retries 2 --timeout 20
             --max-concurrency 8 --scheme https --scheme http
-            'dist/**/*.html'
+            'dist/client/**/*.html'
           fail: true
       - uses: actions/upload-artifact@v4
         with:
-          name: philo4all-dist
+          name: philo4all-deploy
           path: dist/
+          include-hidden-files: true
   deploy:
     needs: verify
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
@@ -47,11 +50,12 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: philo4all-dist
+          name: philo4all-deploy
           path: dist/
-      - name: Deploy verified static files to Cloudflare Pages
+      - name: Deploy verified Astro Worker
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=philo4all --branch=main
+          wranglerVersion: "4.151.0"
+          command: deploy --config dist/server/wrangler.json

@@ -1,8 +1,25 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "philo4all",
+  "main": "@astrojs/cloudflare/entrypoints/server",
   "compatibility_date": "2026-10-15",
-  "assets": {
-    "directory": "./dist"
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "binding": "ASSETS", "directory": "./dist/client", "run_worker_first": ["/api/*"] },
+  "vars": { "AX_CHAT_URL": "" },
+  "observability": { "enabled": true, "logs": { "enabled": true }, "traces": { "enabled": true } },
+  "env": {
+    "local": {
+      "services": [],
+      "vars": { "AX_CHAT_URL": "http://localhost:5173/api/ask" }
+    },
+    "live": {
+      "services": [{ "binding": "AX_CHAT", "service": "ax-chat-demo", "remote": true }],
+      "vars": { "AX_CHAT_URL": "" }
+    },
+    "production": {
+      "name": "philo4all",
+      "services": [{ "binding": "AX_CHAT", "service": "ax-chat-demo" }],
+      "vars": { "AX_CHAT_URL": "" }
+    }
   }
 }

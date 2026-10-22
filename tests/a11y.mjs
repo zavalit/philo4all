@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 import {createServer} from 'node:http';
 import {readFileSync,existsSync,statSync} from 'node:fs';
 import {resolve,extname} from 'node:path';
-const ROOT=resolve('dist');
+const ROOT=resolve('dist/client');
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.webp':'image/webp','.svg':'image/svg+xml','.woff2':'font/woff2','.txt':'text/plain; charset=utf-8'};
 const server=createServer((req,res)=>{
  const request=decodeURIComponent(new URL(req.url,'http://localhost').pathname);

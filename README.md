@@ -10,6 +10,7 @@ Requirements: Node.js 22.12+ and pnpm.
 pnpm install
 pnpm run dev                      # http://localhost:4321/
 pnpm run check                    # tokens, CSS/content lint, astro check
+pnpm run test:chat                # API validation, response passthrough, privacy
 pnpm run build
 node scripts/check-internal-links.mjs
 pnpm exec playwright install chromium
@@ -117,21 +118,45 @@ See [`REDAKTION.md`](./REDAKTION.md) (German) for the Studi-Team. In short: chap
 
 ## Deployment
 
-The `verify` job in GitHub Actions does the following:
-1. Validates tokens and content.
-2. Runs `astro check` and the build.
-3. Checks internal anchors and runs the a11y tests.
-4. Checks external links with Lychee (strict).
+The Cloudflare adapter builds the reader as static assets in `dist/client/` and the Astro API as a Worker in `dist/server/`. Sessions are disabled and images are compiled at build time, so the frontend needs no KV or Images resources.
 
-`deploy` uploads the verified `dist/` to Cloudflare Pages:
+GitHub Actions validates tokens/content, generates binding types, checks TypeScript, runs chat tests, builds and dry-runs the Worker, checks links and accessibility, then deploys the verified `dist/` artifact as Worker `philo4all`:
 
 ```sh
-npx wrangler pages deploy dist --project-name=philo4all --branch=main
+pnpm run build
+pnpm run deploy:dry-run
+pnpm run deploy
 ```
 
-Setup:
-- Create a Cloudflare Pages *Direct Upload* project named `philo4all`.
-- Add the `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets.
-- Do not enable a second Git-connected Cloudflare build: it would bypass the checks.
+Set GitHub secrets `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` with Workers Scripts Edit permission in the account containing `ax-chat-demo`. The build explicitly selects the `production` environment; CI deploys its generated `dist/server/wrangler.json` with the production `AX_CHAT` service binding. Routine deployments do not migrate or seed AX Chat data.
 
-External university URLs inherited from the PDF may be outdated, and Lychee can block a release. Fix or replace them with the Studi-Team's approval rather than disabling the check.
+This replaces the Pages deployment command with Workers deployment. The existing Pages site and its domain are not changed by these code edits; move any custom domain to Worker `philo4all` when releasing it. Do not enable a second Cloudflare build that bypasses CI checks. External university links can still block a release; fix them with the Studi-Team rather than disabling validation.
+
+## Chat API
+
+`src/pages/api/chat.ts` implements `POST /api/chat` with JSON `{ "question": "…" }`. The handler in `src/lib/chat.ts` trims the question, enforces 1–2,000 characters, and sends `{ "question": "…", "mapping": "clef-flash" }` to AX Chat. Each question is independent.
+
+Production calls `env.AX_CHAT.fetch(backendRequest)` through the `AX_CHAT` → `ax-chat-demo` service binding. The request uses the incoming origin with path `/api/ask`; the binding selects the Worker, so no artificial hostname or public backend URL is needed.
+
+Responses pass through unchanged, including `429`, error bodies, and response headers. Browser authorization headers, cookies, debug tokens, and extra JSON fields are discarded. Invalid input returns `400`, unsupported methods `405` with `Allow: POST`, and connection failures `503`.
+
+The frontend posts to the same-origin `/api/chat`, checks `response.ok`, then reads `result.runs[0].answer` and `result.runs[0].citations`.
+
+### Local or live backend
+
+| Command | AX Chat target |
+|---|---|
+| `npm run dev` | Local HTTP endpoint, default `http://localhost:5173/api/ask` |
+| `npm run dev:live` | Deployed `ax-chat-demo` through a remote service binding; requires `wrangler login` and uses live AI |
+
+Both serve `http://localhost:4321` and run the same Astro API route in the Workers runtime. Stop the current server before switching modes (Ctrl+C, or `npx astro dev stop` for a background server). Keep AX Chat running locally for the first command. AX Chat's `npm run dev:offline` uses recorded questions and a marked stub answer; its `npm run dev` uses live AI.
+
+To change the local endpoint, copy `.dev.vars.local.example` to `.dev.vars.local`, edit `AX_CHAT_URL` to the full `/api/ask` URL, then restart Philo4all. This file is ignored and applies only to `npm run dev`. An empty `AX_CHAT_URL` selects the Worker binding; production and `dev:live` configure it empty.
+
+```sh
+curl http://localhost:4321/api/chat \
+  -H 'Content-Type: application/json' \
+  -d '{"question":"Wie melde ich mich für einen Kurs an?"}'
+```
+
+`pnpm run test:chat` tests both transports, answer/citation passthrough, input validation, credential stripping, and backend errors without consuming live AI.
