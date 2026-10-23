@@ -8,7 +8,7 @@ const { pages, ...overrides } = Astro.props;
 const stack = { ...paperStack, ...overrides };
 ---
 <div class={styles.reader} style={`--stack-stick:${stack.stick};--stack-dim:${stack.dim};--stack-shrink:${stack.shrink}`}>
-  <PageNav pages={pages} />
+  <PageNav pages={pages}><slot name="tools" /></PageNav>
   <main id="hauptinhalt" class={styles.column} tabindex="-1">
     <slot />
     <footer class={styles.colophon}><slot name="colophon" /></footer>

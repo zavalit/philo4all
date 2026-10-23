@@ -1,6 +1,6 @@
 import {readFileSync, readdirSync, statSync, existsSync} from 'node:fs';
 import {join, resolve} from 'node:path';
-const root=resolve('dist');
+const root=resolve('dist/client');
 const files=[];
 function scan(dir){for(const f of readdirSync(dir)){const p=join(dir,f);statSync(p).isDirectory()?scan(p):f.endsWith('.html')&&files.push(p);}}
 scan(root);

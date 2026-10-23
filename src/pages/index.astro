@@ -8,6 +8,7 @@ import Contents from '../components/Contents/Contents.astro';
 import Chapter from '../components/Chapter/Chapter.astro';
 import Panel from '../components/Panel/Panel.astro';
 import Art from '../components/Art/Art.astro';
+import AiChat from '../components/AiChat/AiChat.tsx';
 
 const intro = await getEntry('pages', 'intro');
 const team = await getEntry('pages', 'studi-team');
@@ -35,6 +36,8 @@ const pages = [
 ---
 <Base title="Philo4all · Dein Weg durch die Uni" description="Studentischer Wegweiser zum Philosophiestudium an der FU Berlin: neun Themen und das Studi-Team auf einer Seite.">
   <Reader pages={pages}>
+    <!-- Behind a flag for now: the island only loads (and the button only shows) with ?ai in the URL. -->
+    <AiChat slot="tools" client:query="ai" />
     <Sheet id="einstieg" labelledby="cover-title" flush>
       <Cover><Intro /></Cover>
     </Sheet>

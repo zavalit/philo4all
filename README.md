@@ -8,8 +8,9 @@ Requirements: Node.js 22.12+ and pnpm.
 
 ```sh
 pnpm install
-pnpm run dev                      # http://localhost:4321/
+pnpm run dev                      # http://localhost:4321/, or the next free port (add ?ai for the AI chat)
 pnpm run check                    # tokens, CSS/content lint, astro check
+pnpm run test:chat                # API validation, response passthrough, privacy, AI chat client logic
 pnpm run build
 node scripts/check-internal-links.mjs
 pnpm exec playwright install chromium
@@ -30,6 +31,7 @@ pnpm run test:a11y
 - **Narrow screens:** plain top-to-bottom scrolling. A floating pill with the current heading opens the page list.
 - **Without JavaScript:** all navigation still works. It uses ordinary fragment links (`#themen`, `#thema-04`); `reader.ts` and `pagenav.ts` only add the stacking, the current-page marker and the previews.
 - **Reduced motion:** with `prefers-reduced-motion`, there is no stacking and no smooth scrolling.
+- **AI chat (behind `?ai`):** with `?ai` in the URL a sparkle button appears under the page dots (above the page pill on narrow screens). Its tooltip reads "KI-Chat"; clicking it opens a modal dialog where visitors ask a question and read the answer with its sources. See [AI chat](#ai-chat).
 
 ### Paper stack configuration
 
@@ -56,6 +58,8 @@ src/
     Chapter/      chapter title + 12-column panel collage
     Panel/        coloured content panel (used in MDX)
     Art/          PDF illustration, in flow / hanging / behind (used in MDX)
+    AiChat/       React island behind ?ai: sparkle button + modal chat (ask.ts and answer.ts hold the tested logic, copy.ts all text)
+  directives/query.ts  client:query="ai": hydrates an island only when the URL has ?ai
   content/pages/{intro,studi-team}.mdx
   content/topics/01-studienalltag.mdx … 09-ueber-die-uni-hinaus.mdx
   assets/art/      illustrations extracted from the PDF (+ maze.svg)
@@ -65,7 +69,8 @@ src/
 public/fonts/      Now and Alex Brush (SIL OFL, licence files alongside)
 tokens/{base,light,dark}.tokens.json
 scripts/           token build, CSS/content lint, internal link check
-tests/a11y.mjs     axe, reader behaviour, labels = headings, URL hash = current page, preview = page equivalence; light/dark, 390/1280 px, with/without reduced motion
+tests/a11y.mjs     axe, reader behaviour, labels = headings, URL hash = current page, preview = page equivalence, AI chat (?ai); light/dark, 390/1280 px, with/without reduced motion
+tests/ai-chat.test.mjs  AI chat client: request, answer/citation parsing, error mapping, safe links
 ```
 
 ## Design system
@@ -103,6 +108,11 @@ See [`REDAKTION.md`](./REDAKTION.md) (German) for the Studi-Team. In short: chap
 - **Focus:**
   - Visible focus with a token-checked contrast.
   - Focus moving into a sheet that is pinned under the next one scrolls it back into view (WCAG 2.4.11).
+- **AI chat:**
+  - The dialog is the native `<dialog>`, labelled and described (the description is the notice that an AI answers). Focus moves into the question field and returns to the button on close.
+  - The chat log is a focusable `role="log"`, so a new answer is announced and the log can be scrolled with the keyboard.
+  - The tooltip is dismissible with Escape, hoverable and persistent (WCAG 1.4.13). The button's accessible name is "KI-Chat öffnen".
+  - Source links say that they open a new tab.
 - **Images:** all illustrations are decorative (`alt=""`). Portraits and campus images have text alternatives.
 - **Testing limits:**
   - Passing axe is not a WCAG certification. Test manually with NVDA/VoiceOver and at 200%/400% zoom before launch.
@@ -117,21 +127,54 @@ See [`REDAKTION.md`](./REDAKTION.md) (German) for the Studi-Team. In short: chap
 
 ## Deployment
 
-The `verify` job in GitHub Actions does the following:
-1. Validates tokens and content.
-2. Runs `astro check` and the build.
-3. Checks internal anchors and runs the a11y tests.
-4. Checks external links with Lychee (strict).
+The Cloudflare adapter builds the reader as static assets in `dist/client/` and the Astro API as a Worker in `dist/server/`. Sessions are disabled and images are compiled at build time, so the frontend needs no KV or Images resources.
 
-`deploy` uploads the verified `dist/` to Cloudflare Pages:
+GitHub Actions validates tokens/content, generates binding types, checks TypeScript, runs chat tests, builds and dry-runs the Worker, and checks internal links and accessibility. A separate weekly workflow checks external links without blocking pull requests on third-party outages. Cloudflare Workers Builds watches the repository and builds/deploys commits independently, so GitHub Actions does not deploy or require Cloudflare secrets.
 
 ```sh
-npx wrangler pages deploy dist --project-name=philo4all --branch=main
+pnpm run build
+pnpm run deploy:dry-run
+pnpm run deploy
 ```
 
-Setup:
-- Create a Cloudflare Pages *Direct Upload* project named `philo4all`.
-- Add the `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets.
-- Do not enable a second Git-connected Cloudflare build: it would bypass the checks.
+The Cloudflare build explicitly selects the `production` environment and deploys the generated `dist/server/wrangler.json` with the production `AX_CHAT` service binding. Routine deployments do not migrate or seed AX Chat data. The weekly link watch tolerates timeouts, rate limits and access-denied responses, but still fails on definitive errors such as `404`; fix those links with the Studi-Team rather than disabling validation.
 
-External university URLs inherited from the PDF may be outdated, and Lychee can block a release. Fix or replace them with the Studi-Team's approval rather than disabling the check.
+## AI chat
+
+A React island (`src/components/AiChat/`) on top of the [Chat API](#chat-api). It is hidden for now: nothing is rendered or loaded unless the URL has `?ai` (`?ai=0`, `?ai=false` and `?ai=off` switch it off again).
+
+- **Flag:** `src/pages/index.astro` mounts the island with `client:query="ai"`, a custom client directive (`src/directives/query.ts`, registered in `astro.config.mjs`). Without the flag the island is never hydrated, so visitors download none of its JavaScript (about 70 kB gzipped, almost all of it React), and the server renders nothing for it. To release the chat, change `client:query="ai"` to `client:idle`, then delete `src/directives/query.ts` and its registration.
+- **Button:** a sparkle icon under the page dots. The dots stay centred and the button hangs below them: `PageNav` has a `tools` slot (filled through `Reader`) in the third row of a `1fr / auto / 1fr` grid. On narrow screens it is a round button above the page pill. The tooltip text is `copy.name` in `src/components/AiChat/copy.ts`, which holds all visible text.
+- **Dialog:** the native `<dialog>`, opened with `showModal()`. Focus is trapped, Escape closes it, the page behind is inert and does not scroll, and focus returns to the button. Clicking the backdrop closes it. It is a centred sheet on wide screens and fills the screen on small ones.
+- **Conversation:** each question is independent (the backend keeps no context), so only the question is sent. The exchange lives in memory only: closing the dialog keeps it, reloading clears it, and nothing is stored.
+- **Answers:** rendered as plain text, never as HTML. The model cites passages as `[evidence-id]`; `answer.ts` turns these into numbered `[1]` links to the sources, which are listed below the answer. Ids the backend did not return are dropped, and bare web addresses become links. Only `https:`, `http:` and `mailto:` addresses are linked. Sources open in a new tab so the conversation is not lost.
+- **Errors:** shown in plain German with a retry button: no connection, a 60-second timeout, `429` (too many questions), `422` (question too long), and everything else as "not reachable". Backend messages are developer text and are never shown. If the backend found nothing relevant, the dialog says so.
+
+## Chat API
+
+`src/pages/api/chat.ts` implements `POST /api/chat` with JSON `{ "question": "…" }`. The handler in `src/lib/chat.ts` trims the question, enforces 1–2,000 characters, and sends `{ "question": "…", "mapping": "clef-flash" }` to AX Chat. Each question is independent.
+
+Production calls `env.AX_CHAT.fetch(backendRequest)` through the `AX_CHAT` → `ax-chat-demo` service binding. The request uses the incoming origin with path `/api/ask`; the binding selects the Worker, so no artificial hostname or public backend URL is needed.
+
+Responses pass through unchanged, including `429`, error bodies, and response headers. Browser authorization headers, cookies, debug tokens, and extra JSON fields are discarded. Invalid input returns `400`, unsupported methods `405` with `Allow: POST`, and connection failures `503`.
+
+The [AI chat](#ai-chat) island posts to the same-origin `/api/chat`, checks `response.ok`, then reads `result.runs[0].answer` and `result.runs[0].citations`.
+
+### Local or live backend
+
+| Command | AX Chat target |
+|---|---|
+| `npm run dev` | Local HTTP endpoint, default `http://localhost:5173/api/ask` |
+| `npm run dev:live` | Deployed `ax-chat-demo` through a remote service binding; requires `wrangler login` and uses live AI |
+
+Both serve `http://localhost:4321` (or the next free port, which `astro dev` prints) and run the same Astro API route in the Workers runtime. Stop the current server before switching modes: Astro allows one dev server per project, so a second `pnpm dev` fails with "Another astro dev server is already running". Press Ctrl+C in its terminal, run `pnpm exec astro dev stop` from another one, or start the new one with `pnpm dev --force`, which replaces it. Keep AX Chat running locally for the first command. AX Chat's `npm run dev:offline` uses recorded questions and a marked stub answer; its `npm run dev` uses live AI.
+
+To change the local endpoint, copy `.dev.vars.local.example` to `.dev.vars.local`, edit `AX_CHAT_URL` to the full `/api/ask` URL, then restart Philo4all. This file is ignored and applies only to `npm run dev`. An empty `AX_CHAT_URL` selects the Worker binding; production and `dev:live` configure it empty.
+
+```sh
+curl http://localhost:4321/api/chat \
+  -H 'Content-Type: application/json' \
+  -d '{"question":"Wie melde ich mich für einen Kurs an?"}'
+```
+
+`pnpm run test:chat` tests both transports, answer/citation passthrough, input validation, credential stripping, and backend errors without consuming live AI.

@@ -20,6 +20,8 @@ const { pages } = Astro.props;
       ))}
     </ol>
   </nav>
+  <!-- Tools next to the dots (the AI chat button): under them on wide screens, above the pill on narrow ones. -->
+  <div class={styles.tools}><slot /></div>
   <!-- Hover preview: pagenav.ts fills it with a live copy of the hovered sheet. -->
   <a class={styles.preview} href={`#${pages[0]?.id}`} tabindex="-1" aria-hidden="true" data-preview>
     <span class={styles.previewTitle} data-preview-title></span>

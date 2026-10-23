@@ -40,16 +40,21 @@
 .link[aria-current] { background:var(--color-pale); font-weight:var(--font-weight-bold); }
 .dot { display:none; }
 .preview { display:none; }
+/* Tools float above the pill, right-aligned with it. */
+.tools { position:fixed; inset-block-end:calc(var(--space-4) + var(--layout-hit-min) + var(--space-3)); inset-inline-end:var(--space-4); z-index:5; }
 
 /*
  * Wide screens: a column of dots in the left gutter; the visible dot sits as far from the sheet
  * (space-12) as the sheets sit from the top (the 24px hit area adds space-2 on each side). Hovering or focusing a dot shows the whole sheet in a preview card (pagenav.ts).
+ * The dots take the middle row of a 1fr / auto / 1fr grid, so they stay centred however tall the tools below them are.
  */
 @media (width >= 60rem) {
-  .pagenav { position:sticky; inset-block-start:var(--space-0); z-index:5; display:flex; align-items:center; justify-content:flex-end; block-size:100dvh; padding-inline-end:calc(var(--space-12) - var(--space-2)); }
+  .pagenav { position:sticky; inset-block-start:var(--space-0); z-index:5; display:grid; grid-template-rows:1fr auto 1fr; justify-items:end; block-size:100dvh; padding-inline-end:calc(var(--space-12) - var(--space-2)); }
   .pill { display:none; }
   /* The nav is the narrow-screen popover; here it overrides the popover UA styles and stays in place. */
-  .pages { position:relative; inset:auto; display:block; inline-size:auto; max-block-size:none; padding:var(--space-0); overflow:visible; border-radius:var(--space-0); background:none; color:var(--color-on-desk); box-shadow:none; }
+  .pages { grid-row:2; position:relative; inset:auto; display:block; inline-size:auto; max-block-size:none; padding:var(--space-0); overflow:visible; border-radius:var(--space-0); background:none; color:var(--color-on-desk); box-shadow:none; }
+  /* As wide as the dots, so a larger button centres on their axis. */
+  .tools { position:static; grid-row:3; align-self:start; display:flex; justify-content:center; inline-size:var(--space-6); padding-block-start:var(--space-4); }
   .link { justify-content:center; inline-size:var(--space-6); min-block-size:var(--space-6); padding:var(--space-0); --focus:var(--color-focus-desk); }
   .link[aria-current] { background:none; }
   .label { position:absolute; inline-size:var(--layout-hairline); block-size:var(--layout-hairline); overflow:hidden; clip-path:inset(50%); white-space:nowrap; }

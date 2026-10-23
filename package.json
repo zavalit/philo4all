@@ -10,19 +10,31 @@
   "scripts": {
     "tokens": "node scripts/build-tokens.mjs",
     "lint": "node scripts/lint-css.mjs && node scripts/lint-content.mjs",
-    "dev": "node scripts/build-tokens.mjs && astro dev",
-    "build": "node scripts/build-tokens.mjs && astro build",
+    "dev": "node scripts/build-tokens.mjs && CLOUDFLARE_ENV=local astro dev",
+    "dev:live": "node scripts/build-tokens.mjs && CLOUDFLARE_ENV=live astro dev",
+    "build": "node scripts/build-tokens.mjs && CLOUDFLARE_ENV=production astro build",
+    "deploy": "wrangler deploy --config dist/server/wrangler.json",
+    "deploy:dry-run": "wrangler deploy --config dist/server/wrangler.json --dry-run",
+    "cf:types": "wrangler types --config wrangler.jsonc --strict-vars=false",
     "preview": "astro preview",
-    "check": "node scripts/build-tokens.mjs && node scripts/lint-css.mjs && node scripts/lint-content.mjs && astro check",
+    "check": "node scripts/build-tokens.mjs && node scripts/lint-css.mjs && node scripts/lint-content.mjs && pnpm run cf:types && astro check",
+    "test:chat": "node --experimental-strip-types --test tests/chat.test.mjs tests/ai-chat.test.mjs",
     "test:a11y": "node tests/a11y.mjs"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "14.4.1",
     "@astrojs/mdx": "^8.1.0",
-    "astro": "^7.4.0"
+    "@astrojs/react": "^7.1.1",
+    "astro": "^7.4.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@axe-core/playwright": "^4.14.0",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "playwright": "^1.64.1",
     "typescript": "^5.9.0",
     "wrangler": "^4.151.0"

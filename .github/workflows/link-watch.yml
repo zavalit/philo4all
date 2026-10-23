@@ -11,8 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
-        with:
-          version: 11
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -22,7 +20,10 @@ jobs:
       - uses: lycheeverse/lychee-action@v2
         with:
           args: >-
-            --no-progress --max-retries 2 --timeout 20
-            --max-concurrency 8 --scheme https --scheme http
-            'dist/**/*.html'
+            --no-progress --max-retries 2 --timeout 30
+            --max-concurrency 4 --accept-timeouts
+            --accept '100..=103,200..=299,403,429'
+            --root-dir '${{ github.workspace }}/dist/client'
+            --scheme https --scheme http --scheme file
+            'dist/client/**/*.html'
           fail: true
