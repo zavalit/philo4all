@@ -129,7 +129,7 @@ See [`REDAKTION.md`](./REDAKTION.md) (German) for the Studi-Team. In short: chap
 
 The Cloudflare adapter builds the reader as static assets in `dist/client/` and the Astro API as a Worker in `dist/server/`. Sessions are disabled and images are compiled at build time, so the frontend needs no KV or Images resources.
 
-GitHub Actions validates tokens/content, generates binding types, checks TypeScript, runs chat tests, builds and dry-runs the Worker, and checks links and accessibility. Cloudflare Workers Builds watches the repository and builds/deploys commits independently, so GitHub Actions does not deploy or require Cloudflare secrets.
+GitHub Actions validates tokens/content, generates binding types, checks TypeScript, runs chat tests, builds and dry-runs the Worker, and checks internal links and accessibility. A separate weekly workflow checks external links without blocking pull requests on third-party outages. Cloudflare Workers Builds watches the repository and builds/deploys commits independently, so GitHub Actions does not deploy or require Cloudflare secrets.
 
 ```sh
 pnpm run build
@@ -137,7 +137,7 @@ pnpm run deploy:dry-run
 pnpm run deploy
 ```
 
-The Cloudflare build explicitly selects the `production` environment and deploys the generated `dist/server/wrangler.json` with the production `AX_CHAT` service binding. Routine deployments do not migrate or seed AX Chat data. External university links can still fail GitHub verification; fix them with the Studi-Team rather than disabling validation.
+The Cloudflare build explicitly selects the `production` environment and deploys the generated `dist/server/wrangler.json` with the production `AX_CHAT` service binding. Routine deployments do not migrate or seed AX Chat data. The weekly link watch tolerates timeouts, rate limits and access-denied responses, but still fails on definitive errors such as `404`; fix those links with the Studi-Team rather than disabling validation.
 
 ## AI chat
 
