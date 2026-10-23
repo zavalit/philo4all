@@ -129,7 +129,7 @@ See [`REDAKTION.md`](./REDAKTION.md) (German) for the Studi-Team. In short: chap
 
 The Cloudflare adapter builds the reader as static assets in `dist/client/` and the Astro API as a Worker in `dist/server/`. Sessions are disabled and images are compiled at build time, so the frontend needs no KV or Images resources.
 
-GitHub Actions validates tokens/content, generates binding types, checks TypeScript, runs chat tests, builds and dry-runs the Worker, checks links and accessibility, then deploys the verified `dist/` artifact as Worker `philo4all`:
+GitHub Actions validates tokens/content, generates binding types, checks TypeScript, runs chat tests, builds and dry-runs the Worker, and checks links and accessibility. Cloudflare Workers Builds watches the repository and builds/deploys commits independently, so GitHub Actions does not deploy or require Cloudflare secrets.
 
 ```sh
 pnpm run build
@@ -137,9 +137,7 @@ pnpm run deploy:dry-run
 pnpm run deploy
 ```
 
-Set GitHub secrets `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` with Workers Scripts Edit permission in the account containing `ax-chat-demo`. The build explicitly selects the `production` environment; CI deploys its generated `dist/server/wrangler.json` with the production `AX_CHAT` service binding. Routine deployments do not migrate or seed AX Chat data.
-
-This replaces the Pages deployment command with Workers deployment. The existing Pages site and its domain are not changed by these code edits; move any custom domain to Worker `philo4all` when releasing it. Do not enable a second Cloudflare build that bypasses CI checks. External university links can still block a release; fix them with the Studi-Team rather than disabling validation.
+The Cloudflare build explicitly selects the `production` environment and deploys the generated `dist/server/wrangler.json` with the production `AX_CHAT` service binding. Routine deployments do not migrate or seed AX Chat data. External university links can still fail GitHub verification; fix them with the Studi-Team rather than disabling validation.
 
 ## AI chat
 

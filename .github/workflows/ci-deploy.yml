@@ -1,4 +1,4 @@
-name: Verify and deploy Philo4all
+name: Verify Philo4all
 on:
   pull_request:
   push:
@@ -7,7 +7,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: philo4all-${{ github.ref }}
+  group: philo4all-verify-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   verify:
@@ -29,7 +29,7 @@ jobs:
       - run: node scripts/check-internal-links.mjs
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm run test:a11y
-      - name: Check external links (strict: broken links fail the build)
+      - name: "Check external links (strict: broken links fail the build)"
         uses: lycheeverse/lychee-action@v2
         with:
           args: >-
@@ -37,25 +37,3 @@ jobs:
             --max-concurrency 8 --scheme https --scheme http
             'dist/client/**/*.html'
           fail: true
-      - uses: actions/upload-artifact@v4
-        with:
-          name: philo4all-deploy
-          path: dist/
-          include-hidden-files: true
-  deploy:
-    needs: verify
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: philo4all-deploy
-          path: dist/
-      - name: Deploy verified Astro Worker
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          wranglerVersion: "4.151.0"
-          command: deploy --config dist/server/wrangler.json
