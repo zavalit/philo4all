@@ -43,6 +43,10 @@
 /* Tools float above the pill, right-aligned with it. */
 .tools { position:fixed; inset-block-end:calc(var(--space-4) + var(--layout-hit-min) + var(--space-3)); inset-inline-end:var(--space-4); z-index:5; }
 
+/* Without the reader script, show ordinary links in the document instead of an overlay. */
+:global(:root:not([data-reader-ready])) .pill { display:none; }
+:global(:root:not([data-reader-ready])) .pages { position:static; display:block; inline-size:min(100%, var(--layout-sheet-max)); max-block-size:none; margin-inline:auto; }
+
 /*
  * Wide screens: a column of dots in the left gutter; the visible dot sits as far from the sheet
  * (space-12) as the sheets sit from the top (the 24px hit area adds space-2 on each side). Hovering or focusing a dot shows the whole sheet in a preview card (pagenav.ts).
@@ -58,7 +62,7 @@
   .link { justify-content:center; inline-size:var(--space-6); min-block-size:var(--space-6); padding:var(--space-0); --focus:var(--color-focus-desk); }
   .link[aria-current] { background:none; }
   .label { position:absolute; inline-size:var(--layout-hairline); block-size:var(--layout-hairline); overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-  .dot { display:block; inline-size:var(--space-2); block-size:var(--space-3); border-radius:var(--radius-round); background:currentColor; opacity:.4; transition:block-size var(--duration-fast), opacity var(--duration-fast); }
+  .dot { display:block; inline-size:var(--space-2); block-size:var(--space-3); border-radius:var(--radius-round); background:currentColor; opacity:.65; transition:block-size var(--duration-fast), opacity var(--duration-fast); }
   .link:hover .dot { opacity:.8; }
   .link[aria-current] .dot { block-size:var(--space-5); opacity:1; }
 

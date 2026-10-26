@@ -1,6 +1,6 @@
 # Philo4all → accessible single-page reader
 
-**Prototype, not an official FU Berlin service.** This repository turns the **Philo4all** student guide of the Studi-Team (Canva PDF, version of May 2025, 12 pages) into one accessible, responsive web page. It keeps the PDF's look (palette, typefaces, illustrations) and reads like scrolling through paper sheets. The editorial content (nine chapters, their order and links) is the Studi-Team's and is not rewritten here.
+**Prototype, not an official FU Berlin service.** This repository turns the **Philo4all** student guide of the Studi-Team (Canva PDF, version of May 2025, 12 pages) into one responsive web page. It keeps the PDF's look (palette, typefaces, illustrations) and reads like scrolling through paper sheets. It retains the nine chapters and their order, with condensed text and some changed links. Exact content parity and full WCAG conformance have not been established; see the German report [Barrierefreiheit: PDF und Webfassung im Vergleich](docs/ACCESSIBILITY_REPORT.md).
 
 ## Quick start
 
@@ -16,6 +16,14 @@ node scripts/check-internal-links.mjs
 pnpm exec playwright install chromium
 pnpm run test:a11y
 ```
+
+`test:a11y` checks axe rules, reader and mocked chat interactions, navigation contrast, keyboard focus, 320px reflow, text spacing, enlarged text and the JavaScript-disabled fallback. To save screenshots and JSON from the extended checks after building:
+
+```sh
+A11Y_OUTPUT=docs/accessibility-evidence A11Y_PHASE=current node tests/accessibility-audit.mjs
+```
+
+Automated passes are not accessibility certification. The report records the remaining browser and assistive-technology checks.
 
 ## How the page works
 

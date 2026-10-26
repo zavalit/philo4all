@@ -94,8 +94,15 @@ for (const sheet of sheets) observer.observe(sheet);
 addEventListener('scroll', schedule, { passive: true });
 // Catch in-page links before the browser navigates, and any other hash change (address bar, back/forward).
 document.addEventListener('click', (event) => {
+  if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
   const link = (event.target as Element).closest<HTMLAnchorElement>('a[href^="#"]');
-  if (link) expect(link.hash);
+  if (!link) return;
+  expect(link.hash);
+  const index = ids.indexOf(decodeURIComponent(link.hash.slice(1)));
+  const heading = index >= 0 && document.getElementById(sheets[index].getAttribute('aria-labelledby') ?? '');
+  // Native fragment scrolling still handles the jump. Afterwards, give the chapter a
+  // meaningful focus destination, including when a popover link has just been hidden.
+  if (heading) requestAnimationFrame(() => heading.focus({ preventScroll: true }));
 });
 addEventListener('hashchange', () => expect(location.hash));
 addEventListener('scrollend', stopExpecting);

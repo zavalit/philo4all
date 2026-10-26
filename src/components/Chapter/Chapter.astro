@@ -5,6 +5,6 @@ interface Props { id: string; heading: string; }
 const { id, heading } = Astro.props;
 ---
 <div class={styles.chapter}>
-  <h2 id={`${id}-title`} class={styles.title}>{heading}</h2>
+  <h2 id={`${id}-title`} class={styles.title} tabindex="-1">{heading}</h2>
   <div class={styles.panels}><slot /></div>
 </div>

@@ -1,0 +1,159 @@
+{
+  "date": "2026-10-26T17:12:29.802Z",
+  "scope": "Original PDF versus latest local production HTML, including the retained accessibility fixes. Earlier HTML is not the comparison baseline.",
+  "pdfSHA256": "88e7e7b09c330014cc395f71122cd7d71c65c08b3a792faf954f5b9370266b86",
+  "htmlSHA256": "9ef800c65b12a51f6aab4cb0798b3446045018a00b7c7cdcb96a20ac0b781904",
+  "browser": "156.0.8078.4",
+  "pdfContrastSamples": [
+    {
+      "text": "WLAN & VPN",
+      "foregroundRGB": [
+        0.9686,
+        0.9569,
+        0.902
+      ],
+      "backgroundRGB": [
+        0.5647,
+        0.6745,
+        0.5569
+      ],
+      "contrast": 2.245847824393458
+    },
+    {
+      "text": "Drucken",
+      "foregroundRGB": [
+        0.9686,
+        0.9569,
+        0.902
+      ],
+      "backgroundRGB": [
+        0.5647,
+        0.6745,
+        0.5569
+      ],
+      "contrast": 2.245847824393458
+    }
+  ],
+  "html": [
+    {
+      "theme": "light",
+      "documentLanguage": "de",
+      "incomingPassageLanguage": "en",
+      "mains": 1,
+      "headingCounts": {
+        "h1": 1,
+        "h2": 10,
+        "h3": 39
+      },
+      "technologyChapterHeading": "H2",
+      "imagesMissingAlt": 0,
+      "contrastSamples": [
+        {
+          "text": "WLAN & VPN",
+          "level": "H3",
+          "foregroundRGB": [
+            38,
+            51,
+            44
+          ],
+          "backgroundRGB": [
+            144,
+            172,
+            142
+          ],
+          "contrast": 5.3239911661512815
+        },
+        {
+          "text": "Drucken",
+          "level": "H3",
+          "foregroundRGB": [
+            38,
+            51,
+            44
+          ],
+          "backgroundRGB": [
+            144,
+            172,
+            142
+          ],
+          "contrast": 5.3239911661512815
+        },
+        {
+          "text": "Software",
+          "level": "H3",
+          "foregroundRGB": [
+            59,
+            76,
+            66
+          ],
+          "backgroundRGB": [
+            206,
+            216,
+            190
+          ],
+          "contrast": 6.173948980536603
+        }
+      ]
+    },
+    {
+      "theme": "dark",
+      "documentLanguage": "de",
+      "incomingPassageLanguage": "en",
+      "mains": 1,
+      "headingCounts": {
+        "h1": 1,
+        "h2": 10,
+        "h3": 39
+      },
+      "technologyChapterHeading": "H2",
+      "imagesMissingAlt": 0,
+      "contrastSamples": [
+        {
+          "text": "WLAN & VPN",
+          "level": "H3",
+          "foregroundRGB": [
+            38,
+            51,
+            44
+          ],
+          "backgroundRGB": [
+            144,
+            172,
+            142
+          ],
+          "contrast": 5.3239911661512815
+        },
+        {
+          "text": "Drucken",
+          "level": "H3",
+          "foregroundRGB": [
+            38,
+            51,
+            44
+          ],
+          "backgroundRGB": [
+            144,
+            172,
+            142
+          ],
+          "contrast": 5.3239911661512815
+        },
+        {
+          "text": "Software",
+          "level": "H3",
+          "foregroundRGB": [
+            59,
+            76,
+            66
+          ],
+          "backgroundRGB": [
+            206,
+            216,
+            190
+          ],
+          "contrast": 6.173948980536603
+        }
+      ]
+    }
+  ]
+}
