@@ -1,0 +1,10 @@
+{
+  "baselineRevision": "5640013fc2f635e233b9ea3cc860dccbb042b282",
+  "scope": "Generated main content before versus after these changes; not a comparison with the PDF. Whitespace collapsed.",
+  "mainTextIdentical": true,
+  "mainTextSHA256": "6216728391c641812c610127bc97086da378a16aa00dbf46fec80f7500ca168d",
+  "mainHrefSequenceIdentical": true,
+  "mainLinkCount": 161,
+  "mainImageSourcesAndAltIdentical": true,
+  "mainImageCount": 32
+}

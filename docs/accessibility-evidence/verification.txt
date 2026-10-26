@@ -1,0 +1,54 @@
+Philo4all accessibility verification
+Test date: 2026-10-26 (Europe/Berlin)
+Baseline revision: 5640013fc2f635e233b9ea3cc860dccbb042b282
+Final target: local production build with the uncommitted changes in this review.
+No deployment or Git commit was made.
+
+$ WRANGLER_LOG_PATH=/tmp/philo4all-audit/wrangler-check.log pnpm run check
+Exit: 0
+DTCG tokens generated and required WCAG AA foreground/background pairs pass.
+CSS rules OK: 11 stylesheets, 8 co-located components.
+Content OK: 9 topics + 2 introductions; link schemes valid (images are checked by Astro at build).
+Result (37 files): 
+- 0 errors
+- 0 warnings
+- 0 hints
+
+$ pnpm run test:chat
+Exit: 0
+# tests 30
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+
+$ WRANGLER_LOG_PATH=/tmp/philo4all-audit/wrangler-build.log pnpm run build
+Exit: 0
+Production build completed; principal token contrast checks passed.
+
+$ node scripts/check-internal-links.mjs
+Exit: 0
+Internal link and anchor check passed across 1 HTML documents.
+
+$ pnpm run test:a11y (baseline original suite)
+Exit: 0
+$ node tests/a11y.mjs
+axe WCAG 2.2 AA, reader and AI chat (?ai) checks passed: light/dark, 390/1280 px, with and without reduced motion.
+
+$ A11Y_OUTPUT=docs/accessibility-evidence A11Y_PHASE=before node tests/accessibility-audit.mjs
+Exit: 1 (expected baseline assertions; details in before.json)
+{"checks": 46, "passed": 37, "failed": 9, "axeScans": 8, "axeViolationInstances": 0}
+
+$ A11Y_OUTPUT=docs/accessibility-evidence A11Y_PHASE=after pnpm run test:a11y
+Exit: 0
+$ node tests/a11y.mjs && node tests/accessibility-audit.mjs
+axe WCAG 2.2 AA, reader and AI chat (?ai) checks passed: light/dark, 390/1280 px, with and without reduced motion.
+{"checks":46,"passed":46,"failed":0,"axeScans":8,"axeViolationInstances":0}
+
+$ git diff --check
+Exit: 0 (no whitespace errors)
+
+$ impeccable detect --json <changed UI source targets>
+Exit: 0; [] (no mechanical detector findings). This is not an accessibility certification.
+
+Initial sandbox-only EPERM errors for loopback servers/browser processes were resolved by permitted reruns. A trial modal assertion was corrected to allow native browser-chrome focus while checking that the underlying page remains inaccessible to Tab.

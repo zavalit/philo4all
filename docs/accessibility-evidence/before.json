@@ -1,0 +1,2673 @@
+{
+  "phase": "before",
+  "date": "2026-10-26T16:39:58.753Z",
+  "target": "local production build",
+  "browser": "156.0.8078.4",
+  "checks": [
+    {
+      "id": "axe",
+      "scenario": "light-320-cover",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "reflow",
+      "scenario": "light-320",
+      "passed": true,
+      "evidence": {
+        "width": 320
+      }
+    },
+    {
+      "id": "text-clipping",
+      "scenario": "light-320",
+      "passed": false,
+      "evidence": [
+        {
+          "text": "Studienanfänger*innen (Erstis)",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": "Online-Studieneinstiegs-Assistent (OSA)",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": ": Stundenplan erstellen, Kursanmeldungen, Videos und interaktive Übungen.",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": "Checkliste Studienbeginn (PDF)",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": ": Einführungsveranstaltungen, Campuscard, WLAN, Bibliotheken und Stundenplan.",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": "Mentor*innen der Philosophie",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": ".",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        }
+      ]
+    },
+    {
+      "id": "semantics",
+      "scenario": "light-320",
+      "passed": true,
+      "evidence": {
+        "lang": "de",
+        "title": "Philo4all · Dein Weg durch die Uni",
+        "mains": 1,
+        "h1s": 1,
+        "skippedHeadings": [],
+        "missingAlt": 0
+      }
+    },
+    {
+      "id": "skip-link",
+      "scenario": "light-320",
+      "passed": true,
+      "evidence": {
+        "tag": "MAIN",
+        "id": "hauptinhalt",
+        "text": "Diese Datei wurde von dem Team der Studienberatung am Institut für Philosophie erstelltVersion von M"
+      }
+    },
+    {
+      "id": "chapter-focus",
+      "scenario": "light-320",
+      "passed": false,
+      "evidence": {
+        "tag": "BODY",
+        "id": "",
+        "text": "Zum Inhalt springenSeiten, aktuell: 4) Wissenschaftliches SchreibenPHILO4ALLInhaltsverzeichnis1) Stu"
+      }
+    },
+    {
+      "id": "chapter-next-tab",
+      "scenario": "light-320",
+      "passed": true,
+      "evidence": {
+        "tag": "A",
+        "id": "",
+        "text": "Leitfäden und Lernmaterialien der FU"
+      }
+    },
+    {
+      "id": "axe",
+      "scenario": "light-320-advice",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "text-spacing",
+      "scenario": "light-320",
+      "passed": false,
+      "evidence": [
+        {
+          "text": "Studienanfänger*innen (Erstis)",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": "Online-Studieneinstiegs-Assistent (OSA)",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": ": Stundenplan erstellen, Kursanmeldungen, Videos und interaktive Übungen.",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": "Checkliste Studienbeginn (PDF)",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": ": Einführungsveranstaltungen, Campuscard, WLAN, Bibliotheken und Stundenplan.",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": "Mentor*innen der Philosophie",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": ".",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        }
+      ]
+    },
+    {
+      "id": "axe",
+      "scenario": "light-1280-cover",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "reflow",
+      "scenario": "light-1280",
+      "passed": true,
+      "evidence": {
+        "width": 1280
+      }
+    },
+    {
+      "id": "text-clipping",
+      "scenario": "light-1280",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "semantics",
+      "scenario": "light-1280",
+      "passed": true,
+      "evidence": {
+        "lang": "de",
+        "title": "Philo4all · Dein Weg durch die Uni",
+        "mains": 1,
+        "h1s": 1,
+        "skippedHeadings": [],
+        "missingAlt": 0
+      }
+    },
+    {
+      "id": "skip-link",
+      "scenario": "light-1280",
+      "passed": true,
+      "evidence": {
+        "tag": "MAIN",
+        "id": "hauptinhalt",
+        "text": "Diese Datei wurde von dem Team der Studienberatung am Institut für Philosophie erstelltVersion von M"
+      }
+    },
+    {
+      "id": "chapter-focus",
+      "scenario": "light-1280",
+      "passed": false,
+      "evidence": {
+        "tag": "BODY",
+        "id": "",
+        "text": "Zum Inhalt springenSeiten, aktuell: 4) Wissenschaftliches SchreibenPHILO4ALLInhaltsverzeichnis1) Stu"
+      }
+    },
+    {
+      "id": "chapter-next-tab",
+      "scenario": "light-1280",
+      "passed": true,
+      "evidence": {
+        "tag": "A",
+        "id": "",
+        "text": "Leitfäden und Lernmaterialien der FU"
+      }
+    },
+    {
+      "id": "axe",
+      "scenario": "light-1280-advice",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "text-spacing",
+      "scenario": "light-1280",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "axe",
+      "scenario": "dark-320-cover",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "reflow",
+      "scenario": "dark-320",
+      "passed": true,
+      "evidence": {
+        "width": 320
+      }
+    },
+    {
+      "id": "text-clipping",
+      "scenario": "dark-320",
+      "passed": false,
+      "evidence": [
+        {
+          "text": "Studienanfänger*innen (Erstis)",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": "Online-Studieneinstiegs-Assistent (OSA)",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": ": Stundenplan erstellen, Kursanmeldungen, Videos und interaktive Übungen.",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": "Checkliste Studienbeginn (PDF)",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": ": Einführungsveranstaltungen, Campuscard, WLAN, Bibliotheken und Stundenplan.",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": "Mentor*innen der Philosophie",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": ".",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        }
+      ]
+    },
+    {
+      "id": "semantics",
+      "scenario": "dark-320",
+      "passed": true,
+      "evidence": {
+        "lang": "de",
+        "title": "Philo4all · Dein Weg durch die Uni",
+        "mains": 1,
+        "h1s": 1,
+        "skippedHeadings": [],
+        "missingAlt": 0
+      }
+    },
+    {
+      "id": "skip-link",
+      "scenario": "dark-320",
+      "passed": true,
+      "evidence": {
+        "tag": "MAIN",
+        "id": "hauptinhalt",
+        "text": "Diese Datei wurde von dem Team der Studienberatung am Institut für Philosophie erstelltVersion von M"
+      }
+    },
+    {
+      "id": "chapter-focus",
+      "scenario": "dark-320",
+      "passed": false,
+      "evidence": {
+        "tag": "BODY",
+        "id": "",
+        "text": "Zum Inhalt springenSeiten, aktuell: 4) Wissenschaftliches SchreibenPHILO4ALLInhaltsverzeichnis1) Stu"
+      }
+    },
+    {
+      "id": "chapter-next-tab",
+      "scenario": "dark-320",
+      "passed": true,
+      "evidence": {
+        "tag": "A",
+        "id": "",
+        "text": "Leitfäden und Lernmaterialien der FU"
+      }
+    },
+    {
+      "id": "axe",
+      "scenario": "dark-320-advice",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "text-spacing",
+      "scenario": "dark-320",
+      "passed": false,
+      "evidence": [
+        {
+          "text": "Studienanfänger*innen (Erstis)",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": "Online-Studieneinstiegs-Assistent (OSA)",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": ": Stundenplan erstellen, Kursanmeldungen, Videos und interaktive Übungen.",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": "Checkliste Studienbeginn (PDF)",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": ": Einführungsveranstaltungen, Campuscard, WLAN, Bibliotheken und Stundenplan.",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": "Mentor*innen der Philosophie",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        },
+        {
+          "text": ".",
+          "clippedBy": "ARTICLE",
+          "width": 304
+        }
+      ]
+    },
+    {
+      "id": "axe",
+      "scenario": "dark-1280-cover",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "reflow",
+      "scenario": "dark-1280",
+      "passed": true,
+      "evidence": {
+        "width": 1280
+      }
+    },
+    {
+      "id": "text-clipping",
+      "scenario": "dark-1280",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "semantics",
+      "scenario": "dark-1280",
+      "passed": true,
+      "evidence": {
+        "lang": "de",
+        "title": "Philo4all · Dein Weg durch die Uni",
+        "mains": 1,
+        "h1s": 1,
+        "skippedHeadings": [],
+        "missingAlt": 0
+      }
+    },
+    {
+      "id": "skip-link",
+      "scenario": "dark-1280",
+      "passed": true,
+      "evidence": {
+        "tag": "MAIN",
+        "id": "hauptinhalt",
+        "text": "Diese Datei wurde von dem Team der Studienberatung am Institut für Philosophie erstelltVersion von M"
+      }
+    },
+    {
+      "id": "chapter-focus",
+      "scenario": "dark-1280",
+      "passed": false,
+      "evidence": {
+        "tag": "BODY",
+        "id": "",
+        "text": "Zum Inhalt springenSeiten, aktuell: 4) Wissenschaftliches SchreibenPHILO4ALLInhaltsverzeichnis1) Stu"
+      }
+    },
+    {
+      "id": "chapter-next-tab",
+      "scenario": "dark-1280",
+      "passed": true,
+      "evidence": {
+        "tag": "A",
+        "id": "",
+        "text": "Leitfäden und Lernmaterialien der FU"
+      }
+    },
+    {
+      "id": "axe",
+      "scenario": "dark-1280-advice",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "text-spacing",
+      "scenario": "dark-1280",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "keyboard-visible",
+      "scenario": "keyboard-390x850",
+      "passed": true,
+      "evidence": {
+        "focusStops": 164,
+        "obscured": []
+      }
+    },
+    {
+      "id": "keyboard-outline",
+      "scenario": "keyboard-390x850",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "keyboard-visible",
+      "scenario": "keyboard-1920x1080",
+      "passed": true,
+      "evidence": {
+        "focusStops": 174,
+        "obscured": []
+      }
+    },
+    {
+      "id": "keyboard-outline",
+      "scenario": "keyboard-1920x1080",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "keyboard-visible",
+      "scenario": "keyboard-1280x300",
+      "passed": true,
+      "evidence": {
+        "focusStops": 174,
+        "obscured": []
+      }
+    },
+    {
+      "id": "keyboard-outline",
+      "scenario": "keyboard-1280x300",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "text-resize",
+      "scenario": "200-percent-root-text",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "id": "reduced-motion",
+      "scenario": "1280-reduce",
+      "passed": true,
+      "evidence": {
+        "position": "relative",
+        "scrollBehavior": "auto"
+      }
+    },
+    {
+      "id": "no-js-menu-closes",
+      "scenario": "390-no-js",
+      "passed": false,
+      "evidence": {
+        "hash": "#thema-04"
+      }
+    },
+    {
+      "id": "no-js-destination",
+      "scenario": "390-no-js",
+      "passed": true,
+      "evidence": {
+        "hash": "#thema-04"
+      }
+    }
+  ],
+  "axe": [
+    {
+      "scenario": "light-320-cover",
+      "engine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "#cover-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "._four_u7lwx_8"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "._contact_u7lwx_12 > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "._start_u7lwx_18 > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            }
+          ]
+        }
+      ],
+      "passedRules": 23
+    },
+    {
+      "scenario": "light-320-advice",
+      "engine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "#cover-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "._four_u7lwx_8"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "._contact_u7lwx_12 > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "._start_u7lwx_18 > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            }
+          ]
+        }
+      ],
+      "passedRules": 23
+    },
+    {
+      "scenario": "light-1280-cover",
+      "engine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "._four_u7lwx_8"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "._contact_u7lwx_12 > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "._start_u7lwx_18 > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ],
+      "passedRules": 22
+    },
+    {
+      "scenario": "light-1280-advice",
+      "engine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "._note_u7lwx_4"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#cover-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._four_u7lwx_8"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._intro_u7lwx_9 > p:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._intro_u7lwx_9 > p:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._contact_u7lwx_12 > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._start_u7lwx_18 > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#themen-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(1) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-01\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(1) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(2) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-02\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(2) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(3) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-03\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(3) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(4) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-04\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(4) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(5) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-05\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(5) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(6) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-06\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(6) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(7) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-07\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(7) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(8) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-08\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(8) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(9) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-09\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(9) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#team-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._member_qvrip_18:nth-child(1) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._member_qvrip_18:nth-child(2) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._member_qvrip_18:nth-child(3) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._member_qvrip_18:nth-child(4) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#haben-wir-etwas-vergessen"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._ask_qvrip_22 > p"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._ask_qvrip_22 > p > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#thema-01-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._panels_1wdt0_3 > p"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "a[href$=\"stw.berlin/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > a[href$=\"wohnen/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > a:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > a:nth-child(4)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "a[href$=\"jobben/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "a[href$=\"kultur/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(4)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(4) > a:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "ul > li:nth-child(4) > a:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(3) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(3) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(5) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(6)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(6) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "a[href$=\"korfu-berlin.org/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#thema-02-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > ul > li:nth-child(3) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(5) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(6)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(6) > a:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "ul > li:nth-child(6) > a:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(7)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(7) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(3) > a:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(3) > a:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(5) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(6) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(7)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(7) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "ul > li:nth-child(8) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "ul > li:nth-child(9) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(3) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(5) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#thema-03-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(3) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(5) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(6)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(6) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(7)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(7) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(2) > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(2) > ._body_ef237_32 > p > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._body_ef237_32 > ul > li:nth-child(3) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._body_ef237_32 > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._body_ef237_32 > ul > li:nth-child(5) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._body_ef237_32 > ul > li:nth-child(6) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(4) > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(4) > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(4) > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "ul > li:nth-child(3) > a[href$=\"#thema-01\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(5) > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._body_ef237_32 > p:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "p:nth-child(2) > strong:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "strong:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "strong:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._body_ef237_32 > p:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            }
+          ]
+        }
+      ],
+      "passedRules": 22
+    },
+    {
+      "scenario": "dark-320-cover",
+      "engine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "#cover-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "._four_u7lwx_8"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "._contact_u7lwx_12 > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "._start_u7lwx_18 > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            }
+          ]
+        }
+      ],
+      "passedRules": 23
+    },
+    {
+      "scenario": "dark-320-advice",
+      "engine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "#cover-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "._four_u7lwx_8"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "._contact_u7lwx_12 > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "._start_u7lwx_18 > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            }
+          ]
+        }
+      ],
+      "passedRules": 23
+    },
+    {
+      "scenario": "dark-1280-cover",
+      "engine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "._four_u7lwx_8"
+              ],
+              "summary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "target": [
+                "._contact_u7lwx_12 > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "target": [
+                "._start_u7lwx_18 > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ],
+      "passedRules": 22
+    },
+    {
+      "scenario": "dark-1280-advice",
+      "engine": {
+        "name": "axe-core",
+        "version": "4.14.0"
+      },
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "._note_u7lwx_4"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#cover-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._four_u7lwx_8"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._intro_u7lwx_9 > p:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._intro_u7lwx_9 > p:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._contact_u7lwx_12 > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._start_u7lwx_18 > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#themen-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(1) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-01\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(1) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(2) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-02\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(2) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(3) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-03\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(3) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(4) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-04\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(4) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(5) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-05\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(5) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(6) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-06\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(6) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(7) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-07\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(7) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(8) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-08\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(8) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(9) > ._num_qvrip_9[aria-hidden=\"true\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._link_qvrip_10[href$=\"#thema-09\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._card_qvrip_5:nth-child(9) > ._desc_qvrip_14"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#team-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._member_qvrip_18:nth-child(1) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._member_qvrip_18:nth-child(2) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._member_qvrip_18:nth-child(3) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._member_qvrip_18:nth-child(4) > span"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#haben-wir-etwas-vergessen"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._ask_qvrip_22 > p"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._ask_qvrip_22 > p > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#thema-01-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._panels_1wdt0_3 > p"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "a[href$=\"stw.berlin/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > a[href$=\"wohnen/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > a:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > a:nth-child(4)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "a[href$=\"jobben/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "a[href$=\"kultur/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(4)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(4) > a:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "ul > li:nth-child(4) > a:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"forest\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(3) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(3) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-01-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(5) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(6)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._panel_ef237_1[data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(6) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "a[href$=\"korfu-berlin.org/\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#thema-02-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > ul > li:nth-child(3) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "li:nth-child(3) > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(5) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(6)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(6) > a:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "ul > li:nth-child(6) > a:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(7)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"pale\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(7) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(3) > a:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(3) > a:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(5) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-02-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(6) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(7)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"] > ._body_ef237_32 > ul > li:nth-child(7) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "ul > li:nth-child(8) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "ul > li:nth-child(9) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(3) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"start\"][data-tone=\"sage\"][data-align=\"start\"] > ._body_ef237_32 > ul > li:nth-child(5) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "#thema-03-title"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(3) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(5) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(6)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(6) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(7)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(1) > ._body_ef237_32 > ul > li:nth-child(7) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(2) > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(2) > ._body_ef237_32 > p > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._body_ef237_32 > ul > li:nth-child(3) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._body_ef237_32 > ul > li:nth-child(4) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._body_ef237_32 > ul > li:nth-child(5) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(3) > ._body_ef237_32 > ul > li:nth-child(6) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(4) > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(4) > ._body_ef237_32 > ul > li:nth-child(1) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "section[data-bleed=\"end\"][data-align=\"end\"][data-tone=\"forest\"]:nth-child(4) > ._body_ef237_32 > ul > li:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "ul > li:nth-child(3) > a[href$=\"#thema-01\"]"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "article[aria-labelledby=\"thema-03-title\"] > ._content_dnlvg_19 > div > ._panels_1wdt0_3 > ._panel_ef237_1[data-tone=\"pale\"][data-align=\"start\"]:nth-child(5) > ._title_ef237_27"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._body_ef237_32 > p:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "p:nth-child(2) > strong:nth-child(1)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "strong:nth-child(2)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "strong:nth-child(3)"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "target": [
+                "._body_ef237_32 > p:nth-child(2) > a"
+              ],
+              "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            }
+          ]
+        }
+      ],
+      "passedRules": 22
+    }
+  ],
+  "summary": {
+    "checks": 46,
+    "passed": 37,
+    "failed": 9,
+    "axeScans": 8,
+    "axeViolationInstances": 0
+  }
+}

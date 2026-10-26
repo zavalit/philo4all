@@ -1,18 +1,9 @@
 import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
-import {createServer} from 'node:http';
-import {readFileSync,existsSync,statSync} from 'node:fs';
-import {resolve,extname} from 'node:path';
-const ROOT=resolve('dist/client');
-const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.webp':'image/webp','.svg':'image/svg+xml','.woff2':'font/woff2','.txt':'text/plain; charset=utf-8'};
-const server=createServer((req,res)=>{
- const request=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
- const path=resolve(ROOT,'.'+request,request.endsWith('/')?'index.html':'');
- if(!path.startsWith(ROOT+'/')||!existsSync(path)||!statSync(path).isFile()){res.writeHead(404);res.end('Not Found');return;}
- res.setHeader('Content-Type',mime[extname(path)]||'application/octet-stream');res.end(readFileSync(path));
-});
-await new Promise(done=>server.listen(0,'127.0.0.1',done));
-const origin=`http://127.0.0.1:${server.address().port}`;
+import { serveSite } from './helpers/static-site.mjs';
+import { navigationContrast } from './helpers/navigation-contrast.mjs';
+const server = await serveSite();
+const { origin } = server;
 let browser, fails=0;
 const fail=(...msg)=>{console.error(...msg);fails++;};
 const nextFrames=page=>page.evaluate(()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done))));
@@ -81,6 +72,15 @@ async function checkAiChat({theme,width,reducedMotion},label){
  if(!await dialog.evaluate(el=>el.matches(':modal')))fail(`AI chat did not open as a modal dialog (${label})`);
  await settle(page);
  if(!await field.evaluate(el=>el===document.activeElement))fail(`Focus did not move to the question field (${label})`);
+ for (const key of ['Tab', 'Shift+Tab']) {
+  for (let i = 0; i < 6; i++) {
+   await page.keyboard.press(key);
+   // Native dialogs may send focus to browser chrome at the boundary (activeElement
+   // then becomes body). The accessibility requirement is to keep the underlying page inert.
+   if (await dialog.evaluate(el => document.activeElement !== document.body && !el.contains(document.activeElement))) fail(`Focus reached the underlying page with ${key} (${label})`);
+  }
+ }
+ await field.focus();
  await scan('dialog');
 
  await field.fill('Wie melde ich mich für einen Kurs an?');
@@ -163,8 +163,12 @@ try{
 
     const duplicateIds=await page.evaluate(()=>{const ids=[...document.querySelectorAll('[id]')].map(el=>el.id);return ids.filter((id,i)=>ids.indexOf(id)!==i);});
     if(duplicateIds.length)fail(`Duplicate ids ${duplicateIds.join(', ')} (${label})`);
+    const englishLanguage = await page.locator('[href="https://www.geisteswissenschaften.fu-berlin.de/we01/studieren/International-Mobility/incoming/index.html"]').evaluate(el => el.closest('[lang]')?.getAttribute('lang'));
+    if (englishLanguage !== 'en') fail(`English incoming-student passage has language ${englishLanguage} (${label})`);
 
     if(width>=960){
+     const contrast = await navigationContrast(page);
+     if (!contrast.passed) fail(`Inactive page dots have ${contrast.contrast.toFixed(2)}:1 contrast; need 3:1 (${label})`);
      // Hovering a dot previews its sheet as a live copy; the copy's layout must match the sheet box for box.
      for(let i=0;i<11;i++){
       await links.nth(i).hover();
@@ -178,6 +182,9 @@ try{
       if(!result.open)fail(`Preview ${i+1} did not open (${label})`);
       if(!result.same)fail(`Preview ${i+1} differs from its sheet (${label})`);
      }
+     await page.locator('[data-preview]').hover();
+     await page.waitForTimeout(200);
+     if (!await page.locator('[data-preview][data-open]').count()) fail(`Preview did not stay open under the pointer (${label})`);
      await page.keyboard.press('Escape');
      if(await page.locator('[data-preview][data-open]').count())fail(`Escape did not close the preview (${label})`);
      await page.evaluate(()=>document.getElementById('thema-03').scrollIntoView({behavior:'instant'}));
@@ -213,6 +220,6 @@ try{
  if(!fails)console.log('axe WCAG 2.2 AA, reader and AI chat (?ai) checks passed: light/dark, 390/1280 px, with and without reduced motion.');
 }finally{
  await browser?.close();
- await new Promise(done=>server.close(done));
+ await server.close();
  if(fails)process.exitCode=1;
 }

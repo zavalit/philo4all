@@ -19,7 +19,7 @@
     "preview": "astro preview",
     "check": "node scripts/build-tokens.mjs && node scripts/lint-css.mjs && node scripts/lint-content.mjs && pnpm run cf:types && astro check",
     "test:chat": "node --experimental-strip-types --test tests/chat.test.mjs tests/ai-chat.test.mjs",
-    "test:a11y": "node tests/a11y.mjs"
+    "test:a11y": "node tests/a11y.mjs && node tests/accessibility-audit.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "14.4.1",

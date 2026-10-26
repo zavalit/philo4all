@@ -1,0 +1,33 @@
+{
+  "url": "https://philo4all.zavalit.workers.dev/",
+  "date": "2026-10-26T16:40:01.823Z",
+  "browser": "156.0.8078.4",
+  "status": 200,
+  "title": "Philo4all · Dein Weg durch die Uni",
+  "headings": [
+    "PHILO4ALL",
+    "Inhaltsverzeichnis",
+    "1) Studienalltag & Zurechtfinden",
+    "2) Studienorganisation",
+    "3) Institutsleben",
+    "4) Wissenschaftliches Schreiben",
+    "5) Technik",
+    "6) Beratungsstellen",
+    "7) Wohnen & Finanzieren",
+    "8) Internationales",
+    "9) Über die Uni hinaus"
+  ],
+  "axe": {
+    "engine": {
+      "name": "axe-core",
+      "version": "4.14.0"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 3
+      }
+    ]
+  }
+}

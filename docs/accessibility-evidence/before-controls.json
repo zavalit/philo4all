@@ -1,0 +1,20 @@
+[
+  {
+    "theme": "light",
+    "foreground": "rgb(247, 244, 230)",
+    "background": "rgb(59, 76, 66)",
+    "opacity": 0.4,
+    "contrast": 2.7362269137589768,
+    "minimum": 3,
+    "passed": false
+  },
+  {
+    "theme": "dark",
+    "foreground": "rgb(233, 229, 214)",
+    "background": "rgb(31, 40, 35)",
+    "opacity": 0.4,
+    "contrast": 3.157688105265245,
+    "minimum": 3,
+    "passed": true
+  }
+]

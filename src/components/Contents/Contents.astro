@@ -11,7 +11,7 @@ const { topics, members } = Astro.props;
 const pad = (n: number) => String(n).padStart(2, '0');
 ---
 <div class={styles.contents}>
-  <h2 id="themen-title" class={styles.title}>Inhaltsverzeichnis</h2>
+  <h2 id="themen-title" class={styles.title} tabindex="-1">Inhaltsverzeichnis</h2>
   <nav aria-labelledby="themen-title">
     <ol class={styles.cards}>
       {topics.map((topic) => (

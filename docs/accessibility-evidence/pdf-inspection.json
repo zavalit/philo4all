@@ -1,0 +1,188 @@
+{
+  "sourceURL": "https://www.geisteswissenschaften.fu-berlin.de/we01/studieren/studienberatung/philo4all/Kopie-von-Philo4all_aktuell_Juli_2025.pdf",
+  "sha256": "88e7e7b09c330014cc395f71122cd7d71c65c08b3a792faf954f5b9370266b86",
+  "bytes": 10651836,
+  "pypdfVersion": "6.21.2",
+  "pages": 12,
+  "pageSizesPoints": [
+    [
+      810.0,
+      1439.999935
+    ]
+  ],
+  "creator": "Canva",
+  "title": "Kopie von Philo4all_Handy",
+  "creationDate": "2025-07-29T11:19:26+00:00",
+  "coverVersionLine": "Version von Mai 2025 ©",
+  "language": "de-DE",
+  "structureLanguageOverrides": {},
+  "marked": true,
+  "structureTreePresent": true,
+  "textCharactersPerPage": [
+    508,
+    1614,
+    1196,
+    1301,
+    1120,
+    1029,
+    1232,
+    1432,
+    921,
+    885,
+    560,
+    1280
+  ],
+  "structureRoleCounts": {
+    "/Document": 1,
+    "/Part": 12,
+    "/Figure": 55,
+    "/H3": 21,
+    "/P": 157,
+    "/H2": 16,
+    "/H1": 17,
+    "/H4": 31,
+    "/H6": 6,
+    "/H5": 18,
+    "/L": 49,
+    "/LI": 148,
+    "/Lbl": 148,
+    "/LBody": 148
+  },
+  "figures": {
+    "count": 55,
+    "withAlt": 0,
+    "withActualText": 0
+  },
+  "figureCountsByPage": {
+    "1": 5,
+    "2": 4,
+    "3": 4,
+    "4": 6,
+    "5": 5,
+    "6": 5,
+    "7": 7,
+    "8": 6,
+    "9": 2,
+    "10": 3,
+    "11": 2,
+    "12": 6
+  },
+  "headingExamples": [
+    {
+      "role": "/H3",
+      "title": "Klick’ dich jetzt durch  das Studi-Labyrinth",
+      "page": 1
+    },
+    {
+      "role": "/H2",
+      "title": "ALL",
+      "page": 1
+    },
+    {
+      "role": "/H1",
+      "title": "PHILO",
+      "page": 1
+    },
+    {
+      "role": "/H2",
+      "title": "5)  Technik",
+      "page": 7
+    },
+    {
+      "role": "/H1",
+      "title": "Software",
+      "page": 7
+    }
+  ],
+  "selectedContrastSample": {
+    "page": 7,
+    "method": "Selected text foreground from PDF graphics-state operators. Sage panel fill matched to the page-7 rendered panel; not a whole-document contrast audit.",
+    "expectedSampleFound": true,
+    "samples": [
+      {
+        "text": "WLAN & VPN",
+        "foregroundRGB": [
+          0.9686,
+          0.9569,
+          0.902
+        ],
+        "backgroundRGB": [
+          0.5647,
+          0.6745,
+          0.5569
+        ],
+        "contrast": 2.245847824393458
+      },
+      {
+        "text": "Drucken",
+        "foregroundRGB": [
+          0.9686,
+          0.9569,
+          0.902
+        ],
+        "backgroundRGB": [
+          0.5647,
+          0.6745,
+          0.5569
+        ],
+        "contrast": 2.245847824393458
+      }
+    ]
+  },
+  "linkAnnotationActions": {
+    "URI": 202,
+    "/GoTo": 104
+  },
+  "htmlHeadingCounts": {
+    "h1": 1,
+    "h2": 10,
+    "h3": 39
+  },
+  "linkComparison": {
+    "method": "Exact unique URI strings; strips PDF whitespace only. Different URLs may reach the same resource. Not a content-parity verdict.",
+    "pdfUniqueURIs": 139,
+    "htmlUniqueExternalLinks": 138,
+    "sharedExact": 120,
+    "pdfOnly": [
+      "http://instagram.com/laiz_fuberlin",
+      "http://nightphotos.de/",
+      "https://lndw.org/2009/3plan.php",
+      "https://studisgegenrechts.de/",
+      "https://www.buchsys.de/fu-berlin/angebote/aktueller_zeitraum/__After_Work_Chill__und__Grill__.html",
+      "https://www.fu-berlin.de/sites/bibliotheken/lernort/gruppen/index.html",
+      "https://www.fu-berlin.de/sites/campusbib/_media/Lernangebote-und-Fuehrungen-Praesenzfuehrungen.html",
+      "https://www.fu-berlin.de/sites/nachhaltigkeit/handlungsfelder/campus/mobilitaet/FUturrad/index.html",
+      "https://www.fu-berlin.de/sites/nachhaltigkeit/handlungsfelder/campus/verwertung_entsorgung/fundgrube/index.html",
+      "https://www.fu-berlin.de/sites/ub/lernangebote/zitiersprechstunde/index.html",
+      "https://www.fu-berlin.de/sites/ub/service/ausleihederdinge/index.html#:~:text=Das%20wissenschaftliche%20Ethos%20der%20Freien%20Universit%C3%A4t%20Berlin%20wird,zum%20t%C3%A4glichen%20Gebrauch%20vor%20Ort%20entliehen%20werden%20k%C3%B6nnen.",
+      "https://www.fu-berlin.de/studium/beratung/veranstaltungen/orientierungsveranstaltungen/zentrale_orientierungstage_fuer_internationale_studierende/index.html",
+      "https://www.fu-berlin.de/universitaet/profil/diversity/index.html",
+      "https://www.geisteswissenschaften.fu-berlin.de/we01/studieren/studienberatung/index.html",
+      "https://www.genderdiversitylehre.fu-berlin.de/ressourcen/beratungsstellen/index.html",
+      "https://www.google.de/maps/",
+      "https://www.stw.berlin/beratung.html",
+      "https://www.stw.berlin/beratung/schreibberatung/zur-schreibberatung.html",
+      "https://www.zedat.fu-berlin.de/Print/Home#:~:text=Drucken%20und%20Scannen%20f%C3%BCr%20Studierende,Scannen%20in%20den%20PC%2DPools."
+    ],
+    "htmlOnly": [
+      "https://linktr.ee/sgr_berlin",
+      "https://www.fu-berlin.de/beratung/studierende/index.html",
+      "https://www.fu-berlin.de/redaktion/orientierung/dahlem/index.html",
+      "https://www.fu-berlin.de/sites/campusbib/Lernangebote-und-Fuehrungen/AllgemeinE/index.html",
+      "https://www.fu-berlin.de/sites/diversity/index.html",
+      "https://www.fu-berlin.de/sites/nachhaltigkeit/handlungsfelder/campus/beschaffung/fainin/index.html",
+      "https://www.fu-berlin.de/sites/nachhaltigkeit/handlungsfelder/campus/mobilitaet/index.html",
+      "https://www.fu-berlin.de/sites/studienberatung/projekte/isfu/index.html",
+      "https://www.fu-berlin.de/sites/ub/lernen/arbeiten-vor-ort/arbeitsplaetze-ub/gruppenarbeitsplaetze/index.html",
+      "https://www.fu-berlin.de/sites/zb/arbeiten-vor-ort/primo-der-dinge/index.html",
+      "https://www.fu-berlin.de/sites/zb/lern-beratungsangebote/sprechstunden/zitiersprechstunde/index.html",
+      "https://www.geisteswissenschaften.fu-berlin.de/we01/studieren/Studienberatung-am-Institut-fuer-Philosophie/index.html",
+      "https://www.geisteswissenschaften.fu-berlin.de/we01/studieren/studienberatung/philo4all/Kopie-von-Philo4all_aktuell_Juli_2025.pdf",
+      "https://www.instagram.com/laiz_fuberlin/",
+      "https://www.stw.berlin/beratung/",
+      "https://www.stw.berlin/kompetenzwerk/schreibzentrum/",
+      "https://www.zedat.fu-berlin.de/Print/Home",
+      "mailto:support@cedis.fu-berlin.de"
+    ]
+  }
+}

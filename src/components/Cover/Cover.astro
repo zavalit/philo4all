@@ -9,7 +9,7 @@ import styles from './Cover.module.css';
   <p class={styles.note}>Diese Datei wurde von dem Team der Studienberatung am Institut für Philosophie erstellt<br />Version von Mai 2025 ©</p>
   <Image class={styles.logo} src={art['fu-logo']} alt="Freie Universität Berlin" width={352} densities={[1, 2]} loading="eager" />
 
-  <h1 id="cover-title" class={styles.wordmark}>PHILO<span class={styles.four}>4</span>ALL</h1>
+  <h1 id="cover-title" class={styles.wordmark} tabindex="-1">PHILO<span class={styles.four}>4</span>ALL</h1>
   <div class={styles.intro}><slot /></div>
 
   <p class={styles.contact}>
