@@ -43,9 +43,13 @@
 /* Tools float above the pill, right-aligned with it. */
 .tools { position:fixed; inset-block-end:calc(var(--space-4) + var(--layout-hit-min) + var(--space-3)); inset-inline-end:var(--space-4); z-index:5; }
 
-/* Without the reader script, show ordinary links in the document instead of an overlay. */
-:global(:root:not([data-reader-ready])) .pill { display:none; }
-:global(:root:not([data-reader-ready])) .pages { position:static; display:block; inline-size:min(100%, var(--layout-sheet-max)); max-block-size:none; margin-inline:auto; }
+/* Without the reader script, show ordinary links in the document instead of an overlay.
+ * Keep this narrow-screen fallback out of the desktop grid: changing the nav's inline size when
+ * the reader becomes ready makes the dots visibly jump from the viewport edge into the gutter. */
+@media (width < 60rem) {
+  :global(:root:not([data-reader-ready])) .pill { display:none; }
+  :global(:root:not([data-reader-ready])) .pages { position:static; display:block; inline-size:min(100%, var(--layout-sheet-max)); max-block-size:none; margin-inline:auto; }
+}
 
 /*
  * Wide screens: a column of dots in the left gutter; the visible dot sits as far from the sheet
